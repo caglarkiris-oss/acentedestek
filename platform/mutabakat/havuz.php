@@ -446,7 +446,7 @@ function process_ana_csv_upload(mysqli $conn, array $file, int $periodId, int $m
                 VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,NOW(),NOW())");
 
             $stR->bind_param(
-                'iiisississssssssssssssii',
+                'iiisisssssssssssssssssii',
                 $periodId, $mainAgencyId, $tali0, $srcType, $batchId, $police, $policyNorm, $txnType, $zeyil,
                 $sigortali, $sigNo, $tanzim, $bitis, $sirket, $urun, $plaka,
                 $brutStr, $netStr, $komStr, $araciStr, $currency, $rowStatus, $locked, $userId
