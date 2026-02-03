@@ -309,7 +309,7 @@ function process_tali_csv_upload(mysqli $conn, array $file, int $periodId, int $
                 VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,NOW(),NOW())");
 
             $stR->bind_param(
-                'iiisssisssssssssii',
+                'iiississsssssssssii',
                 $periodId, $mainAgencyId, $taliAgencyId, $tc_vn, $srcType,
                 $batchId, $police, $policyNorm, $txnType,
                 $sigortali, $tanzim, $sirket, $brans, $plaka, $brutStr,
