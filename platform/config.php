@@ -10,7 +10,7 @@ return [
     ],
 
     'url' => [
-        'base' => '',
+        'base' => 'http://localhost:8082',
         'path' => '',
     ],
 
