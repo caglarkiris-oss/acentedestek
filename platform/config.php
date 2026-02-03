@@ -11,7 +11,7 @@ return [
 
     'url' => [
         'base' => '',
-        'path' => '/platform',
+        'path' => '',
     ],
 
     'brand' => [
