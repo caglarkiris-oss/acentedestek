@@ -28,8 +28,8 @@ return [
     'db' => [
         'host'    => getenv('DB_HOST') ?: 'localhost',
         'name'    => getenv('DB_NAME') ?: 'mutabakat_db',
-        'user'    => getenv('DB_USER') ?: 'root',
-        'pass'    => getenv('DB_PASS') ?: '',
+        'user'    => getenv('DB_USER') ?: 'mutabakat',
+        'pass'    => getenv('DB_PASS') ?: 'mutabakat123',
         'charset' => 'utf8mb4',
         'port'    => (int)(getenv('DB_PORT') ?: 3306),
     ],
