@@ -1,0 +1,767 @@
+[12-Dec-2025 19:42:58 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/dijicent/public_html/platform/login.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/dijicent/public_html/platform/login.php on line 17
+[13-Dec-2025 00:13:40 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to undefined function require_login() in /home/dijicent/public_html/platform/tickets-create.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/dijicent/public_html/platform/tickets-create.php on line 7
+[13-Dec-2025 00:13:46 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to undefined function require_login() in /home/dijicent/public_html/platform/tickets.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/dijicent/public_html/platform/tickets.php on line 7
+[13-Dec-2025 00:13:48 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to undefined function require_login() in /home/dijicent/public_html/platform/tickets.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/dijicent/public_html/platform/tickets.php on line 7
+[13-Dec-2025 00:16:45 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to undefined function require_login() in /home/dijicent/public_html/platform/tickets.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/dijicent/public_html/platform/tickets.php on line 7
+[13-Dec-2025 00:21:13 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to undefined function require_login() in /home/dijicent/public_html/platform/tickets-create.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/dijicent/public_html/platform/tickets-create.php on line 7
+[13-Dec-2025 02:07:46 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/dijicent/public_html/platform/users-create.php:85
+Stack trace:
+#0 {main}
+  thrown in /home/dijicent/public_html/platform/users-create.php on line 85
+[13-Dec-2025 02:08:01 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/dijicent/public_html/platform/users.php:96
+Stack trace:
+#0 {main}
+  thrown in /home/dijicent/public_html/platform/users.php on line 96
+[13-Dec-2025 02:08:03 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/dijicent/public_html/platform/users-create.php:85
+Stack trace:
+#0 {main}
+  thrown in /home/dijicent/public_html/platform/users-create.php on line 85
+[13-Dec-2025 02:14:23 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/dijicent/public_html/platform/users.php:67
+Stack trace:
+#0 {main}
+  thrown in /home/dijicent/public_html/platform/users.php on line 67
+[13-Dec-2025 02:14:25 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/dijicent/public_html/platform/users-create.php:85
+Stack trace:
+#0 {main}
+  thrown in /home/dijicent/public_html/platform/users-create.php on line 85
+[13-Dec-2025 02:17:05 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/dijicent/public_html/platform/users-create.php:85
+Stack trace:
+#0 {main}
+  thrown in /home/dijicent/public_html/platform/users-create.php on line 85
+[13-Dec-2025 02:17:07 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/dijicent/public_html/platform/agencies.php:58
+Stack trace:
+#0 {main}
+  thrown in /home/dijicent/public_html/platform/agencies.php on line 58
+[13-Dec-2025 02:17:17 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/dijicent/public_html/platform/agencies-create.php:80
+Stack trace:
+#0 {main}
+  thrown in /home/dijicent/public_html/platform/agencies-create.php on line 80
+[13-Dec-2025 02:17:24 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/dijicent/public_html/platform/agencies.php:58
+Stack trace:
+#0 {main}
+  thrown in /home/dijicent/public_html/platform/agencies.php on line 58
+[13-Dec-2025 02:17:30 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/dijicent/public_html/platform/agencies.php:58
+Stack trace:
+#0 {main}
+  thrown in /home/dijicent/public_html/platform/agencies.php on line 58
+[13-Dec-2025 02:18:00 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/dijicent/public_html/platform/users-create.php:85
+Stack trace:
+#0 {main}
+  thrown in /home/dijicent/public_html/platform/users-create.php on line 85
+[13-Dec-2025 02:21:34 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/dijicent/public_html/platform/agencies-create.php:77
+Stack trace:
+#0 {main}
+  thrown in /home/dijicent/public_html/platform/agencies-create.php on line 77
+[13-Dec-2025 02:22:21 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/dijicent/public_html/platform/users-create.php:120
+Stack trace:
+#0 {main}
+  thrown in /home/dijicent/public_html/platform/users-create.php on line 120
+[13-Dec-2025 02:24:18 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/dijicent/public_html/platform/agencies-create.php:124
+Stack trace:
+#0 {main}
+  thrown in /home/dijicent/public_html/platform/agencies-create.php on line 124
+[13-Dec-2025 02:34:28 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/dijicent/public_html/platform/agencies-create.php:89
+Stack trace:
+#0 {main}
+  thrown in /home/dijicent/public_html/platform/agencies-create.php on line 89
+[13-Dec-2025 02:35:06 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/dijicent/public_html/platform/users-create.php:120
+Stack trace:
+#0 {main}
+  thrown in /home/dijicent/public_html/platform/users-create.php on line 120
+[13-Dec-2025 02:35:38 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/dijicent/public_html/platform/users-create.php:120
+Stack trace:
+#0 {main}
+  thrown in /home/dijicent/public_html/platform/users-create.php on line 120
+[13-Dec-2025 02:36:02 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/dijicent/public_html/platform/agencies-create.php:89
+Stack trace:
+#0 {main}
+  thrown in /home/dijicent/public_html/platform/agencies-create.php on line 89
+[13-Dec-2025 02:40:09 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/dijicent/public_html/platform/users-create.php:120
+Stack trace:
+#0 {main}
+  thrown in /home/dijicent/public_html/platform/users-create.php on line 120
+[13-Dec-2025 02:51:49 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/dijicent/public_html/platform/agencies-create.php:117
+Stack trace:
+#0 {main}
+  thrown in /home/dijicent/public_html/platform/agencies-create.php on line 117
+[13-Dec-2025 02:54:12 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/dijicent/public_html/platform/agencies-create.php:128
+Stack trace:
+#0 {main}
+  thrown in /home/dijicent/public_html/platform/agencies-create.php on line 128
+[13-Dec-2025 02:55:42 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/dijicent/public_html/platform/agencies.php:68
+Stack trace:
+#0 {main}
+  thrown in /home/dijicent/public_html/platform/agencies.php on line 68
+[13-Dec-2025 02:55:50 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/dijicent/public_html/platform/agencies.php:68
+Stack trace:
+#0 {main}
+  thrown in /home/dijicent/public_html/platform/agencies.php on line 68
+[13-Dec-2025 02:55:54 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/dijicent/public_html/platform/agencies.php:68
+Stack trace:
+#0 {main}
+  thrown in /home/dijicent/public_html/platform/agencies.php on line 68
+[13-Dec-2025 02:56:29 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/dijicent/public_html/platform/agencies.php:68
+Stack trace:
+#0 {main}
+  thrown in /home/dijicent/public_html/platform/agencies.php on line 68
+[13-Dec-2025 02:59:04 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/dijicent/public_html/platform/users.php:82
+Stack trace:
+#0 {main}
+  thrown in /home/dijicent/public_html/platform/users.php on line 82
+[13-Dec-2025 02:59:27 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/dijicent/public_html/platform/users-create.php:120
+Stack trace:
+#0 {main}
+  thrown in /home/dijicent/public_html/platform/users-create.php on line 120
+[13-Dec-2025 02:59:56 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/dijicent/public_html/platform/users.php:82
+Stack trace:
+#0 {main}
+  thrown in /home/dijicent/public_html/platform/users.php on line 82
+[13-Dec-2025 22:37:24 Europe/Istanbul] MAIL: start to=KENDI_MAILIN@gmail.com host=mail.dijicenter.com port=465 user=info@dijicenter.com enc=ssl
+[13-Dec-2025 22:37:24 Europe/Istanbul] SMTP[2] SERVER -> CLIENT: 220-mt-ratio.guzelhosting.com ESMTP Exim 4.99 #2 Sat, 13 Dec 2025 22:37:24 +0300 
+220-We do not authorize the use of this system to transport unsolicited, 
+220 and/or bulk e-mail.
+
+[13-Dec-2025 22:37:24 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: EHLO dijicenter.com
+
+[13-Dec-2025 22:37:24 Europe/Istanbul] SMTP[2] SERVER -> CLIENT: 250-mt-ratio.guzelhosting.com Hello dijicenter.com [2a06:41c0:1:1e::468]
+250-SIZE 52428800
+250-LIMITS MAILMAX=1000 RCPTMAX=50000
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH PLAIN LOGIN
+250 HELP
+
+[13-Dec-2025 22:37:24 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: AUTH LOGIN
+
+[13-Dec-2025 22:37:24 Europe/Istanbul] SMTP[2] SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+[13-Dec-2025 22:37:24 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: [credentials hidden]
+[13-Dec-2025 22:37:24 Europe/Istanbul] SMTP[2] SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+[13-Dec-2025 22:37:24 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: [credentials hidden]
+[13-Dec-2025 22:37:24 Europe/Istanbul] SMTP[2] SERVER -> CLIENT: 235 Authentication succeeded
+
+[13-Dec-2025 22:37:24 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: MAIL FROM:<info@dijicenter.com>
+
+[13-Dec-2025 22:37:24 Europe/Istanbul] SMTP[2] SERVER -> CLIENT: 250 OK
+
+[13-Dec-2025 22:37:24 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: RCPT TO:<KENDI_MAILIN@gmail.com>
+
+[13-Dec-2025 22:37:24 Europe/Istanbul] SMTP[2] SERVER -> CLIENT: 250 Accepted
+
+[13-Dec-2025 22:37:24 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: DATA
+
+[13-Dec-2025 22:37:24 Europe/Istanbul] SMTP[2] SERVER -> CLIENT: 354 Enter message, ending with "." on a line by itself
+
+[13-Dec-2025 22:37:24 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: Date: Sat, 13 Dec 2025 22:37:24 +0300
+
+[13-Dec-2025 22:37:24 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: To: KENDI_MAILIN@gmail.com
+
+[13-Dec-2025 22:37:24 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: From: Acentedestek <info@dijicenter.com>
+
+[13-Dec-2025 22:37:24 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: Reply-To: Acentedestek <info@dijicenter.com>
+
+[13-Dec-2025 22:37:24 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: Subject: =?UTF-8?B?QWNlbnRlZGVzdGVrIHwgU01UUCBUZXN0?=
+
+[13-Dec-2025 22:37:24 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: Message-ID: <MMnbaW43GtrXzwO7pFf2CqSwEAWchYOxpzvmf9x8bk@dijicenter.com>
+
+[13-Dec-2025 22:37:24 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: X-Mailer: PHPMailer 7.0.1 (https://github.com/PHPMailer/PHPMailer)
+
+[13-Dec-2025 22:37:24 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: MIME-Version: 1.0
+
+[13-Dec-2025 22:37:24 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+[13-Dec-2025 22:37:24 Europe/Istanbul] SMTP[1] CLIENT -> SERVER:  boundary="b1=_MMnbaW43GtrXzwO7pFf2CqSwEAWchYOxpzvmf9x8bk"
+
+[13-Dec-2025 22:37:24 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: 
+
+[13-Dec-2025 22:37:24 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: --b1=_MMnbaW43GtrXzwO7pFf2CqSwEAWchYOxpzvmf9x8bk
+
+[13-Dec-2025 22:37:24 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+
+[13-Dec-2025 22:37:24 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: Content-Transfer-Encoding: base64
+
+[13-Dec-2025 22:37:24 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: 
+
+[13-Dec-2025 22:37:24 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: U01UUCB0ZXN0MjAyNS0xMi0xMyAyMjozNzoyNA==
+
+[13-Dec-2025 22:37:24 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: 
+
+[13-Dec-2025 22:37:24 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: --b1=_MMnbaW43GtrXzwO7pFf2CqSwEAWchYOxpzvmf9x8bk
+
+[13-Dec-2025 22:37:24 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: Content-Type: text/html; charset=UTF-8
+
+[13-Dec-2025 22:37:24 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: Content-Transfer-Encoding: base64
+
+[13-Dec-2025 22:37:24 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: 
+
+[13-Dec-2025 22:37:24 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: PGI+U01UUCB0ZXN0PC9iPjxicj4yMDI1LTEyLTEzIDIyOjM3OjI0
+
+[13-Dec-2025 22:37:24 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: 
+
+[13-Dec-2025 22:37:24 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: 
+
+[13-Dec-2025 22:37:24 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: --b1=_MMnbaW43GtrXzwO7pFf2CqSwEAWchYOxpzvmf9x8bk--
+
+[13-Dec-2025 22:37:24 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: 
+
+[13-Dec-2025 22:37:24 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: .
+
+[13-Dec-2025 22:37:24 Europe/Istanbul] SMTP[2] SERVER -> CLIENT: 250 OK id=1vUVQi-00000000YE0-2I1P
+
+[13-Dec-2025 22:37:24 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: QUIT
+
+[13-Dec-2025 22:37:24 Europe/Istanbul] SMTP[2] SERVER -> CLIENT: 221 mt-ratio.guzelhosting.com closing connection
+
+[13-Dec-2025 22:37:24 Europe/Istanbul] MAIL: send result=OK err=
+[13-Dec-2025 22:42:44 Europe/Istanbul] MAIL: start to=iremacik103@gmail.com host=mail.dijicenter.com port=465 user=info@dijicenter.com enc=ssl
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[2] SERVER -> CLIENT: 220-mt-ratio.guzelhosting.com ESMTP Exim 4.99 #2 Sat, 13 Dec 2025 22:42:44 +0300 
+220-We do not authorize the use of this system to transport unsolicited, 
+220 and/or bulk e-mail.
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: EHLO dijicenter.com
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[2] SERVER -> CLIENT: 250-mt-ratio.guzelhosting.com Hello dijicenter.com [2a06:41c0:1:1e::468]
+250-SIZE 52428800
+250-LIMITS MAILMAX=1000 RCPTMAX=50000
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH PLAIN LOGIN
+250 HELP
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: AUTH LOGIN
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[2] SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: [credentials hidden]
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[2] SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: [credentials hidden]
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[2] SERVER -> CLIENT: 235 Authentication succeeded
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: MAIL FROM:<info@dijicenter.com>
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[2] SERVER -> CLIENT: 250 OK
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: RCPT TO:<iremacik103@gmail.com>
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[2] SERVER -> CLIENT: 250 Accepted
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: DATA
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[2] SERVER -> CLIENT: 354 Enter message, ending with "." on a line by itself
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: Date: Sat, 13 Dec 2025 22:42:44 +0300
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: To: iremacik103@gmail.com
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: From: Acentedestek <info@dijicenter.com>
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: Reply-To: Acentedestek <info@dijicenter.com>
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: Subject: =?UTF-8?B?QWNlbnRlZGVzdGVrIHwgxZ5pZnJlIFllbmlsZW1l?=
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: Message-ID: <YtTyYj8cy6Z9IGMpMQW5yzqSjt598TKbaYUr8Xf0wM@dijicenter.com>
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: X-Mailer: PHPMailer 7.0.1 (https://github.com/PHPMailer/PHPMailer)
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: MIME-Version: 1.0
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[1] CLIENT -> SERVER:  boundary="b1=_YtTyYj8cy6Z9IGMpMQW5yzqSjt598TKbaYUr8Xf0wM"
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: 
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: --b1=_YtTyYj8cy6Z9IGMpMQW5yzqSjt598TKbaYUr8Xf0wM
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: Content-Transfer-Encoding: base64
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: 
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: DQogICAgICAgIA0KICAgICAgICAgIEFjZW50ZWRlc3RlayDigJMgxZ5pZnJlIFllbmlsZW1lDQog
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: ICAgICAgICAgxZ5pZnJlbml6aSB5ZW5pbGVtZWsgacOnaW4gYcWfYcSfxLFkYWtpIGJ1dG9uYSB0
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: xLFrbGF5xLFuOg0KICAgICAgICAgIA0KICAgICAgICAgICAgDQogICAgICAgICAgICAgIMWeaWZy
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: ZW1pIFllbmlsZQ0KICAgICAgICAgICAgDQogICAgICAgICAgDQogICAgICAgICAgQnUgYmHEn2xh
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: bnTEsSAxIHNhYXQgZ2XDp2VybGlkaXIuDQogICAgICAgIA==
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: 
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: --b1=_YtTyYj8cy6Z9IGMpMQW5yzqSjt598TKbaYUr8Xf0wM
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: Content-Type: text/html; charset=UTF-8
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: Content-Transfer-Encoding: base64
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: 
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: DQogICAgICAgIDxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OkFyaWFsLHNhbnMtc2VyaWY7bGluZS1o
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: ZWlnaHQ6MS41Ij4NCiAgICAgICAgICA8aDIgc3R5bGU9Im1hcmdpbjowIDAgMTBweCI+QWNlbnRl
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: ZGVzdGVrIOKAkyDFnmlmcmUgWWVuaWxlbWU8L2gyPg0KICAgICAgICAgIDxwPsWeaWZyZW5pemkg
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: eWVuaWxlbWVrIGnDp2luIGHFn2HEn8SxZGFraSBidXRvbmEgdMSxa2xhecSxbjo8L3A+DQogICAg
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: ICAgICAgPHAgc3R5bGU9Im1hcmdpbjoxNnB4IDAiPg0KICAgICAgICAgICAgPGEgaHJlZj0iaHR0
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: cHM6Ly9kaWppY2VudGVyLmNvbS9wbGF0Zm9ybS9yZXNldC1wYXNzd29yZC5waHA/dG9rZW49NTAx
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: NDJlMGZiNTZjNzMyMjZkMTU1ZDk4YjE0NTEwOWFiNDE3YmY1ODBkNzE1OTQ2ZmY5OTlmYjZlYzFm
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: MTY0MyZlbWFpbD1pcmVtYWNpazEwMyU0MGdtYWlsLmNvbSIgc3R5bGU9ImRpc3BsYXk6aW5saW5l
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: LWJsb2NrO3BhZGRpbmc6MTBweCAxNnB4O2JhY2tncm91bmQ6IzExMTgyNztjb2xvcjojZmZmO3Rl
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: eHQtZGVjb3JhdGlvbjpub25lO2JvcmRlci1yYWRpdXM6OHB4Ij4NCiAgICAgICAgICAgICAgxZ5p
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: ZnJlbWkgWWVuaWxlDQogICAgICAgICAgICA8L2E+DQogICAgICAgICAgPC9wPg0KICAgICAgICAg
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: IDxwIHN0eWxlPSJmb250LXNpemU6MTJweDtjb2xvcjojNjY2Ij5CdSBiYcSfbGFudMSxIDEgc2Fh
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: dCBnZcOnZXJsaWRpci48L3A+DQogICAgICAgIDwvZGl2Pg==
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: 
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: 
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: --b1=_YtTyYj8cy6Z9IGMpMQW5yzqSjt598TKbaYUr8Xf0wM--
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: 
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: .
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[2] SERVER -> CLIENT: 250 OK id=1vUVVs-00000000aJj-1PNq
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: QUIT
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] SMTP[2] SERVER -> CLIENT: 221 mt-ratio.guzelhosting.com closing connection
+
+[13-Dec-2025 22:42:44 Europe/Istanbul] MAIL: send result=OK err=
+[13-Dec-2025 22:43:38 Europe/Istanbul] MAIL: start to=caglar.kiris@dijicenter.com host=mail.dijicenter.com port=465 user=info@dijicenter.com enc=ssl
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[2] SERVER -> CLIENT: 220-mt-ratio.guzelhosting.com ESMTP Exim 4.99 #2 Sat, 13 Dec 2025 22:43:38 +0300 
+220-We do not authorize the use of this system to transport unsolicited, 
+220 and/or bulk e-mail.
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: EHLO dijicenter.com
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[2] SERVER -> CLIENT: 250-mt-ratio.guzelhosting.com Hello dijicenter.com [2a06:41c0:1:1e::468]
+250-SIZE 52428800
+250-LIMITS MAILMAX=1000 RCPTMAX=50000
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH PLAIN LOGIN
+250 HELP
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: AUTH LOGIN
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[2] SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: [credentials hidden]
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[2] SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: [credentials hidden]
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[2] SERVER -> CLIENT: 235 Authentication succeeded
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: MAIL FROM:<info@dijicenter.com>
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[2] SERVER -> CLIENT: 250 OK
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: RCPT TO:<caglar.kiris@dijicenter.com>
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[2] SERVER -> CLIENT: 250 Accepted
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: DATA
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[2] SERVER -> CLIENT: 354 Enter message, ending with "." on a line by itself
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: Date: Sat, 13 Dec 2025 22:43:38 +0300
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: To: caglar.kiris@dijicenter.com
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: From: Acentedestek <info@dijicenter.com>
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: Reply-To: Acentedestek <info@dijicenter.com>
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: Subject: =?UTF-8?B?QWNlbnRlZGVzdGVrIHwgxZ5pZnJlIFllbmlsZW1l?=
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: Message-ID: <8wPRSAPOFiMqHmKLWvSUJHdXPY4Z7gpVF4xQhvuX0@dijicenter.com>
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: X-Mailer: PHPMailer 7.0.1 (https://github.com/PHPMailer/PHPMailer)
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: MIME-Version: 1.0
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[1] CLIENT -> SERVER:  boundary="b1=_8wPRSAPOFiMqHmKLWvSUJHdXPY4Z7gpVF4xQhvuX0"
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: 
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: --b1=_8wPRSAPOFiMqHmKLWvSUJHdXPY4Z7gpVF4xQhvuX0
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: Content-Transfer-Encoding: base64
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: 
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: DQogICAgICAgIA0KICAgICAgICAgIEFjZW50ZWRlc3RlayDigJMgxZ5pZnJlIFllbmlsZW1lDQog
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: ICAgICAgICAgxZ5pZnJlbml6aSB5ZW5pbGVtZWsgacOnaW4gYcWfYcSfxLFkYWtpIGJ1dG9uYSB0
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: xLFrbGF5xLFuOg0KICAgICAgICAgIA0KICAgICAgICAgICAgDQogICAgICAgICAgICAgIMWeaWZy
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: ZW1pIFllbmlsZQ0KICAgICAgICAgICAgDQogICAgICAgICAgDQogICAgICAgICAgQnUgYmHEn2xh
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: bnTEsSAxIHNhYXQgZ2XDp2VybGlkaXIuDQogICAgICAgIA==
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: 
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: --b1=_8wPRSAPOFiMqHmKLWvSUJHdXPY4Z7gpVF4xQhvuX0
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: Content-Type: text/html; charset=UTF-8
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: Content-Transfer-Encoding: base64
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: 
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: DQogICAgICAgIDxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OkFyaWFsLHNhbnMtc2VyaWY7bGluZS1o
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: ZWlnaHQ6MS41Ij4NCiAgICAgICAgICA8aDIgc3R5bGU9Im1hcmdpbjowIDAgMTBweCI+QWNlbnRl
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: ZGVzdGVrIOKAkyDFnmlmcmUgWWVuaWxlbWU8L2gyPg0KICAgICAgICAgIDxwPsWeaWZyZW5pemkg
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: eWVuaWxlbWVrIGnDp2luIGHFn2HEn8SxZGFraSBidXRvbmEgdMSxa2xhecSxbjo8L3A+DQogICAg
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: ICAgICAgPHAgc3R5bGU9Im1hcmdpbjoxNnB4IDAiPg0KICAgICAgICAgICAgPGEgaHJlZj0iaHR0
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: cHM6Ly9kaWppY2VudGVyLmNvbS9wbGF0Zm9ybS9yZXNldC1wYXNzd29yZC5waHA/dG9rZW49MDJi
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: ZDllZTRmYzA0MGFjNmVmYmQ5NDRjYTlmYWVmNmQ0NmQ4OWU0MzlkYTlmYmE5ODk0ZDhlMjdjZmYy
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: YTNiMyZlbWFpbD1jYWdsYXIua2lyaXMlNDBkaWppY2VudGVyLmNvbSIgc3R5bGU9ImRpc3BsYXk6
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: aW5saW5lLWJsb2NrO3BhZGRpbmc6MTBweCAxNnB4O2JhY2tncm91bmQ6IzExMTgyNztjb2xvcjoj
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: ZmZmO3RleHQtZGVjb3JhdGlvbjpub25lO2JvcmRlci1yYWRpdXM6OHB4Ij4NCiAgICAgICAgICAg
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: ICAgxZ5pZnJlbWkgWWVuaWxlDQogICAgICAgICAgICA8L2E+DQogICAgICAgICAgPC9wPg0KICAg
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: ICAgICAgIDxwIHN0eWxlPSJmb250LXNpemU6MTJweDtjb2xvcjojNjY2Ij5CdSBiYcSfbGFudMSx
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: IDEgc2FhdCBnZcOnZXJsaWRpci48L3A+DQogICAgICAgIDwvZGl2Pg==
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: 
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: 
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: --b1=_8wPRSAPOFiMqHmKLWvSUJHdXPY4Z7gpVF4xQhvuX0--
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: 
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: .
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[2] SERVER -> CLIENT: 250 OK id=1vUVWk-00000000ae9-0z2Q
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: QUIT
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] SMTP[2] SERVER -> CLIENT: 221 mt-ratio.guzelhosting.com closing connection
+
+[13-Dec-2025 22:43:38 Europe/Istanbul] MAIL: send result=OK err=
+[13-Dec-2025 22:59:59 Europe/Istanbul] MAIL: start to=caglar.kiris@dijicenter.com host=mail.dijicenter.com port=465 user=info@dijicenter.com enc=ssl
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[2] SERVER -> CLIENT: 220-mt-ratio.guzelhosting.com ESMTP Exim 4.99 #2 Sat, 13 Dec 2025 22:59:59 +0300 
+220-We do not authorize the use of this system to transport unsolicited, 
+220 and/or bulk e-mail.
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: EHLO dijicenter.com
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[2] SERVER -> CLIENT: 250-mt-ratio.guzelhosting.com Hello dijicenter.com [2a06:41c0:1:1e::468]
+250-SIZE 52428800
+250-LIMITS MAILMAX=1000 RCPTMAX=50000
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH PLAIN LOGIN
+250 HELP
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: AUTH LOGIN
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[2] SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: [credentials hidden]
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[2] SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: [credentials hidden]
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[2] SERVER -> CLIENT: 235 Authentication succeeded
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: MAIL FROM:<info@dijicenter.com>
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[2] SERVER -> CLIENT: 250 OK
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: RCPT TO:<caglar.kiris@dijicenter.com>
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[2] SERVER -> CLIENT: 250 Accepted
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: DATA
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[2] SERVER -> CLIENT: 354 Enter message, ending with "." on a line by itself
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: Date: Sat, 13 Dec 2025 22:59:59 +0300
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: To: caglar.kiris@dijicenter.com
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: From: Acentedestek <info@dijicenter.com>
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: Reply-To: Acentedestek <info@dijicenter.com>
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: Subject: =?UTF-8?B?QWNlbnRlZGVzdGVrIHwgxZ5pZnJlIFllbmlsZW1l?=
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: Message-ID: <Ae5zMLjF3qgiZnGiik5WJHzR8NWn8qgAIkuy8GdEcA@dijicenter.com>
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: X-Mailer: PHPMailer 7.0.1 (https://github.com/PHPMailer/PHPMailer)
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: MIME-Version: 1.0
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER:  boundary="b1=_Ae5zMLjF3qgiZnGiik5WJHzR8NWn8qgAIkuy8GdEcA"
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: 
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: --b1=_Ae5zMLjF3qgiZnGiik5WJHzR8NWn8qgAIkuy8GdEcA
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: Content-Transfer-Encoding: base64
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: 
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: DQogICAgICAgICAgDQogICAgICAgICAgICBBY2VudGVkZXN0ZWsg4oCTIMWeaWZyZSBZZW5pbGVt
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: ZQ0KICAgICAgICAgICAgxZ5pZnJlbml6aSB5ZW5pbGVtZWsgacOnaW4gYcWfYcSfxLFkYWtpIGJ1
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: dG9uYSB0xLFrbGF5xLFuOg0KICAgICAgICAgICAgDQogICAgICAgICAgICAgIA0KICAgICAgICAg
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: ICAgICAgIMWeaWZyZW1pIFllbmlsZQ0KICAgICAgICAgICAgICANCiAgICAgICAgICAgIA0KICAg
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: ICAgICAgICAgQnUgYmHEn2xhbnTEsSAxIHNhYXQgZ2XDp2VybGlkaXIuDQogICAgICAgICAgICBC
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: dXRvbiDDp2FsxLHFn21henNhOiBodHRwczovL2RpamljZW50ZXIuY29tL3BsYXRmb3JtL3Jlc2V0
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: LXBhc3N3b3JkLnBocD90b2tlbj03ZDliOGVhMmFkMWEyYjk4OTEyMGQ0Nzg0YWFmNTBlOTMyZDU0
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: NDlmZGFmNjE1NWYwZTc5ZTIxYmQ1ZTMxYTBkJmVtYWlsPWNhZ2xhci5raXJpcyU0MGRpamljZW50
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: ZXIuY29tDQogICAgICAgICAg
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: 
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: --b1=_Ae5zMLjF3qgiZnGiik5WJHzR8NWn8qgAIkuy8GdEcA
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: Content-Type: text/html; charset=UTF-8
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: Content-Transfer-Encoding: base64
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: 
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: DQogICAgICAgICAgPGRpdiBzdHlsZT0iZm9udC1mYW1pbHk6QXJpYWwsc2Fucy1zZXJpZjtsaW5l
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: LWhlaWdodDoxLjUiPg0KICAgICAgICAgICAgPGgyIHN0eWxlPSJtYXJnaW46MCAwIDEwcHggMCI+
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: QWNlbnRlZGVzdGVrIOKAkyDFnmlmcmUgWWVuaWxlbWU8L2gyPg0KICAgICAgICAgICAgPHA+xZ5p
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: ZnJlbml6aSB5ZW5pbGVtZWsgacOnaW4gYcWfYcSfxLFkYWtpIGJ1dG9uYSB0xLFrbGF5xLFuOjwv
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: cD4NCiAgICAgICAgICAgIDxwIHN0eWxlPSJtYXJnaW46MThweCAwIj4NCiAgICAgICAgICAgICAg
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: PGEgaHJlZj0iaHR0cHM6Ly9kaWppY2VudGVyLmNvbS9wbGF0Zm9ybS9yZXNldC1wYXNzd29yZC5w
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: aHA/dG9rZW49N2Q5YjhlYTJhZDFhMmI5ODkxMjBkNDc4NGFhZjUwZTkzMmQ1NDQ5ZmRhZjYxNTVm
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: MGU3OWUyMWJkNWUzMWEwZCZlbWFpbD1jYWdsYXIua2lyaXMlNDBkaWppY2VudGVyLmNvbSIgc3R5
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: bGU9ImRpc3BsYXk6aW5saW5lLWJsb2NrO3BhZGRpbmc6MTBweCAxNnB4O2JhY2tncm91bmQ6IzEx
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: MTgyNztjb2xvcjojZmZmO3RleHQtZGVjb3JhdGlvbjpub25lO2JvcmRlci1yYWRpdXM6MTBweDtm
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: b250LXdlaWdodDo3MDAiPg0KICAgICAgICAgICAgICAgIMWeaWZyZW1pIFllbmlsZQ0KICAgICAg
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: ICAgICAgICA8L2E+DQogICAgICAgICAgICA8L3A+DQogICAgICAgICAgICA8cCBzdHlsZT0iZm9u
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: dC1zaXplOjEycHg7Y29sb3I6IzY2NjttYXJnaW46MCI+QnUgYmHEn2xhbnTEsSAxIHNhYXQgZ2XD
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: p2VybGlkaXIuPC9wPg0KICAgICAgICAgICAgPHAgc3R5bGU9ImZvbnQtc2l6ZToxMnB4O2NvbG9y
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: OiM2NjY7bWFyZ2luOjZweCAwIDAgMCI+QnV0b24gw6dhbMSxxZ9tYXpzYTogaHR0cHM6Ly9kaWpp
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: Y2VudGVyLmNvbS9wbGF0Zm9ybS9yZXNldC1wYXNzd29yZC5waHA/dG9rZW49N2Q5YjhlYTJhZDFh
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: MmI5ODkxMjBkNDc4NGFhZjUwZTkzMmQ1NDQ5ZmRhZjYxNTVmMGU3OWUyMWJkNWUzMWEwZCZlbWFp
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: bD1jYWdsYXIua2lyaXMlNDBkaWppY2VudGVyLmNvbTwvcD4NCiAgICAgICAgICA8L2Rpdj4=
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: 
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: 
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: --b1=_Ae5zMLjF3qgiZnGiik5WJHzR8NWn8qgAIkuy8GdEcA--
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: 
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: .
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[2] SERVER -> CLIENT: 250 OK id=1vUVmZ-00000000hPi-1zRo
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[1] CLIENT -> SERVER: QUIT
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] SMTP[2] SERVER -> CLIENT: 221 mt-ratio.guzelhosting.com closing connection
+
+[13-Dec-2025 22:59:59 Europe/Istanbul] MAIL: send result=OK err=
+[14-Dec-2025 02:50:51 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '<', expecting end of file in /home/dijicent/public_html/platform/helpers.php on line 261
+[14-Dec-2025 02:51:49 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '<', expecting end of file in /home/dijicent/public_html/platform/helpers.php on line 261
+[14-Dec-2025 02:51:50 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '<', expecting end of file in /home/dijicent/public_html/platform/helpers.php on line 261
+[14-Dec-2025 02:51:53 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '<', expecting end of file in /home/dijicent/public_html/platform/helpers.php on line 261
+[14-Dec-2025 03:27:47 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to undefined function greeting_tr() in /home/dijicent/public_html/platform/layout/header.php:85
+Stack trace:
+#0 /home/dijicent/public_html/platform/dashboard.php(3): require_once()
+#1 {main}
+  thrown in /home/dijicent/public_html/platform/layout/header.php on line 85
+[14-Dec-2025 03:27:49 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to undefined function greeting_tr() in /home/dijicent/public_html/platform/layout/header.php:85
+Stack trace:
+#0 /home/dijicent/public_html/platform/dashboard.php(3): require_once()
+#1 {main}
+  thrown in /home/dijicent/public_html/platform/layout/header.php on line 85
+[14-Dec-2025 17:58:24 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/dijicent/public_html/platform/agencies-profile.php:72
+Stack trace:
+#0 {main}
+  thrown in /home/dijicent/public_html/platform/agencies-profile.php on line 72
+[14-Dec-2025 18:00:35 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/dijicent/public_html/platform/agencies-profile.php:79
+Stack trace:
+#0 {main}
+  thrown in /home/dijicent/public_html/platform/agencies-profile.php on line 79
+[14-Dec-2025 18:11:09 Europe/Istanbul] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'dijicent_zz_platform.insurance_companies' doesn't exist in /home/dijicent/public_html/platform/agencies-profile.php:98
+Stack trace:
+#0 /home/dijicent/public_html/platform/agencies-profile.php(98): mysqli->query('SELECT id, name...')
+#1 {main}
+  thrown in /home/dijicent/public_html/platform/agencies-profile.php on line 98
+[14-Dec-2025 18:11:11 Europe/Istanbul] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'dijicent_zz_platform.insurance_companies' doesn't exist in /home/dijicent/public_html/platform/agencies-profile.php:98
+Stack trace:
+#0 /home/dijicent/public_html/platform/agencies-profile.php(98): mysqli->query('SELECT id, name...')
+#1 {main}
+  thrown in /home/dijicent/public_html/platform/agencies-profile.php on line 98
+[14-Dec-2025 18:13:47 Europe/Istanbul] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'dijicent_zz_platform.insurance_companies' doesn't exist in /home/dijicent/public_html/platform/agencies-profile.php:72
+Stack trace:
+#0 /home/dijicent/public_html/platform/agencies-profile.php(72): mysqli->query('SELECT id, name...')
+#1 {main}
+  thrown in /home/dijicent/public_html/platform/agencies-profile.php on line 72
+[14-Dec-2025 18:30:30 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/dijicent/public_html/platform/agencies-profile.php:107
+Stack trace:
+#0 {main}
+  thrown in /home/dijicent/public_html/platform/agencies-profile.php on line 107
+[14-Dec-2025 20:45:45 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_stmt_get_result() in /home/dijicent/public_html/platform/agency-directory.php:125
+Stack trace:
+#0 {main}
+  thrown in /home/dijicent/public_html/platform/agency-directory.php on line 125
+[14-Dec-2025 20:46:55 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_stmt_get_result() in /home/dijicent/public_html/platform/agency-directory.php:131
+Stack trace:
+#0 {main}
+  thrown in /home/dijicent/public_html/platform/agency-directory.php on line 131
+[14-Dec-2025 21:08:17 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_stmt_get_result() in /home/dijicent/public_html/platform/tickets.php:89
+Stack trace:
+#0 {main}
+  thrown in /home/dijicent/public_html/platform/tickets.php on line 89
+[14-Dec-2025 21:09:04 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_stmt_get_result() in /home/dijicent/public_html/platform/tickets.php:89
+Stack trace:
+#0 {main}
+  thrown in /home/dijicent/public_html/platform/tickets.php on line 89
+[14-Dec-2025 21:22:54 Europe/Istanbul] PHP Fatal error:  strict_types declaration must be the very first statement in the script in /home/dijicent/public_html/platform/tickets.php on line 32
+[14-Dec-2025 21:23:09 Europe/Istanbul] PHP Fatal error:  strict_types declaration must be the very first statement in the script in /home/dijicent/public_html/platform/tickets.php on line 32
+[14-Dec-2025 22:05:02 Europe/Istanbul] PHP Fatal error:  Cannot redeclare e() (previously declared in /home/dijicent/public_html/platform/tickets.php:79) in /home/dijicent/public_html/platform/helpers.php on line 90
+[14-Dec-2025 22:05:38 Europe/Istanbul] PHP Fatal error:  Cannot redeclare e() (previously declared in /home/dijicent/public_html/platform/tickets.php:79) in /home/dijicent/public_html/platform/helpers.php on line 90
+[14-Dec-2025 22:06:19 Europe/Istanbul] PHP Fatal error:  strict_types declaration must be the very first statement in the script in /home/dijicent/public_html/platform/tickets.php on line 6
+[14-Dec-2025 22:06:21 Europe/Istanbul] PHP Fatal error:  strict_types declaration must be the very first statement in the script in /home/dijicent/public_html/platform/tickets.php on line 6
+[14-Dec-2025 22:06:22 Europe/Istanbul] PHP Fatal error:  strict_types declaration must be the very first statement in the script in /home/dijicent/public_html/platform/tickets.php on line 6
+[14-Dec-2025 22:06:47 Europe/Istanbul] PHP Fatal error:  strict_types declaration must be the very first statement in the script in /home/dijicent/public_html/platform/tickets.php on line 7
+[15-Dec-2025 00:01:17 Europe/Istanbul] PHP HATA: mysqli_stmt_bind_param() expects parameter 1 to be mysqli_stmt, bool given (/home/dijicent/public_html/platform/ticket.php:157)
+[15-Dec-2025 00:01:17 Europe/Istanbul] PHP HATA: mysqli_stmt_execute() expects parameter 1 to be mysqli_stmt, bool given (/home/dijicent/public_html/platform/ticket.php:158)
+[15-Dec-2025 00:01:17 Europe/Istanbul] PHP ISTISNA: Argument 1 passed to stmt_fetch_assoc() must be an instance of mysqli_stmt, bool given, called in /home/dijicent/public_html/platform/ticket.php on line 159
+[15-Dec-2025 00:01:20 Europe/Istanbul] PHP HATA: mysqli_stmt_bind_param() expects parameter 1 to be mysqli_stmt, bool given (/home/dijicent/public_html/platform/ticket.php:157)
+[15-Dec-2025 00:01:20 Europe/Istanbul] PHP HATA: mysqli_stmt_execute() expects parameter 1 to be mysqli_stmt, bool given (/home/dijicent/public_html/platform/ticket.php:158)
+[15-Dec-2025 00:01:20 Europe/Istanbul] PHP ISTISNA: Argument 1 passed to stmt_fetch_assoc() must be an instance of mysqli_stmt, bool given, called in /home/dijicent/public_html/platform/ticket.php on line 159
+[15-Dec-2025 00:04:00 Europe/Istanbul] PHP HATA: mysqli_stmt_bind_param() expects parameter 1 to be mysqli_stmt, bool given (/home/dijicent/public_html/platform/ticket.php:157)
+[15-Dec-2025 00:04:00 Europe/Istanbul] PHP HATA: mysqli_stmt_execute() expects parameter 1 to be mysqli_stmt, bool given (/home/dijicent/public_html/platform/ticket.php:158)
+[15-Dec-2025 00:04:00 Europe/Istanbul] PHP ISTISNA: Argument 1 passed to stmt_fetch_assoc() must be an instance of mysqli_stmt, bool given, called in /home/dijicent/public_html/platform/ticket.php on line 159
+[15-Dec-2025 00:04:03 Europe/Istanbul] PHP HATA: mysqli_stmt_bind_param() expects parameter 1 to be mysqli_stmt, bool given (/home/dijicent/public_html/platform/ticket.php:157)
+[15-Dec-2025 00:04:03 Europe/Istanbul] PHP HATA: mysqli_stmt_execute() expects parameter 1 to be mysqli_stmt, bool given (/home/dijicent/public_html/platform/ticket.php:158)
+[15-Dec-2025 00:04:03 Europe/Istanbul] PHP ISTISNA: Argument 1 passed to stmt_fetch_assoc() must be an instance of mysqli_stmt, bool given, called in /home/dijicent/public_html/platform/ticket.php on line 159
+[15-Dec-2025 00:07:29 Europe/Istanbul] PHP HATA: mysqli_stmt_bind_param() expects parameter 1 to be mysqli_stmt, bool given (/home/dijicent/public_html/platform/ticket.php:157)
+[15-Dec-2025 00:07:29 Europe/Istanbul] PHP HATA: mysqli_stmt_execute() expects parameter 1 to be mysqli_stmt, bool given (/home/dijicent/public_html/platform/ticket.php:158)
+[15-Dec-2025 00:07:29 Europe/Istanbul] PHP ISTISNA: Argument 1 passed to stmt_fetch_assoc() must be an instance of mysqli_stmt, bool given, called in /home/dijicent/public_html/platform/ticket.php on line 159
+[15-Dec-2025 00:09:03 Europe/Istanbul] PHP HATA: mysqli_stmt_bind_param() expects parameter 1 to be mysqli_stmt, bool given (/home/dijicent/public_html/platform/ticket.php:161)
+[15-Dec-2025 00:09:03 Europe/Istanbul] PHP HATA: mysqli_stmt_execute() expects parameter 1 to be mysqli_stmt, bool given (/home/dijicent/public_html/platform/ticket.php:162)
+[15-Dec-2025 00:09:03 Europe/Istanbul] PHP ISTISNA: Argument 1 passed to stmt_fetch_assoc() must be an instance of mysqli_stmt, bool given, called in /home/dijicent/public_html/platform/ticket.php on line 163
+[15-Dec-2025 00:09:44 Europe/Istanbul] PHP HATA: mysqli_stmt_bind_param() expects parameter 1 to be mysqli_stmt, bool given (/home/dijicent/public_html/platform/ticket.php:143)
+[15-Dec-2025 00:09:44 Europe/Istanbul] PHP HATA: mysqli_stmt_execute() expects parameter 1 to be mysqli_stmt, bool given (/home/dijicent/public_html/platform/ticket.php:144)
+[15-Dec-2025 00:09:44 Europe/Istanbul] PHP ISTISNA: Argument 1 passed to stmt_fetch_assoc() must be an instance of mysqli_stmt, bool given, called in /home/dijicent/public_html/platform/ticket.php on line 145
+[15-Dec-2025 00:09:48 Europe/Istanbul] PHP HATA: mysqli_stmt_bind_param() expects parameter 1 to be mysqli_stmt, bool given (/home/dijicent/public_html/platform/ticket.php:143)
+[15-Dec-2025 00:09:48 Europe/Istanbul] PHP HATA: mysqli_stmt_execute() expects parameter 1 to be mysqli_stmt, bool given (/home/dijicent/public_html/platform/ticket.php:144)
+[15-Dec-2025 00:09:48 Europe/Istanbul] PHP ISTISNA: Argument 1 passed to stmt_fetch_assoc() must be an instance of mysqli_stmt, bool given, called in /home/dijicent/public_html/platform/ticket.php on line 145
+[15-Dec-2025 00:34:36 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/dijicent/public_html/platform/tickets.php on line 37
+[15-Dec-2025 00:34:41 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/dijicent/public_html/platform/tickets.php on line 37
+[15-Dec-2025 00:34:42 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/dijicent/public_html/platform/tickets.php on line 37
+[15-Dec-2025 00:34:43 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/dijicent/public_html/platform/tickets.php on line 37
+[15-Dec-2025 00:34:44 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/dijicent/public_html/platform/tickets.php on line 37
+[15-Dec-2025 01:00:59 Europe/Istanbul] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/dijicent/public_html/platform/ajax-unread.php on line 29
+[15-Dec-2025 01:01:08 Europe/Istanbul] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/dijicent/public_html/platform/ajax-unread.php on line 29
+[15-Dec-2025 01:01:10 Europe/Istanbul] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/dijicent/public_html/platform/ajax-unread.php on line 29
+[15-Dec-2025 01:01:36 Europe/Istanbul] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/dijicent/public_html/platform/ajax-unread.php on line 29
+[15-Dec-2025 01:06:30 Europe/Istanbul] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/dijicent/public_html/platform/ajax-unread.php on line 29
+[15-Dec-2025 01:06:33 Europe/Istanbul] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/dijicent/public_html/platform/ajax-unread.php on line 29
+[15-Dec-2025 01:06:35 Europe/Istanbul] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/dijicent/public_html/platform/ajax-unread.php on line 29
+[15-Dec-2025 01:06:45 Europe/Istanbul] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/dijicent/public_html/platform/ajax-unread.php on line 29
+[15-Dec-2025 01:12:45 Europe/Istanbul] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/dijicent/public_html/platform/ajax-unread.php on line 29
+[15-Dec-2025 01:12:45 Europe/Istanbul] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/dijicent/public_html/platform/ajax-unread.php on line 29
+[15-Dec-2025 01:12:47 Europe/Istanbul] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/dijicent/public_html/platform/ajax-unread.php on line 29
+[15-Dec-2025 01:14:32 Europe/Istanbul] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/dijicent/public_html/platform/ajax-unread.php on line 29
+[15-Dec-2025 01:14:34 Europe/Istanbul] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/dijicent/public_html/platform/ajax-unread.php on line 29
+[15-Dec-2025 01:14:35 Europe/Istanbul] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/dijicent/public_html/platform/ajax-unread.php on line 29
+[15-Dec-2025 01:14:42 Europe/Istanbul] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/dijicent/public_html/platform/ajax-unread.php on line 29
+[15-Dec-2025 01:14:48 Europe/Istanbul] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/dijicent/public_html/platform/ajax-unread.php on line 29
+[15-Dec-2025 01:14:51 Europe/Istanbul] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/dijicent/public_html/platform/ajax-unread.php on line 29
+[15-Dec-2025 01:14:53 Europe/Istanbul] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/dijicent/public_html/platform/ajax-unread.php on line 29
+[15-Dec-2025 01:14:56 Europe/Istanbul] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/dijicent/public_html/platform/ajax-unread.php on line 29
+[15-Dec-2025 01:15:06 Europe/Istanbul] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/dijicent/public_html/platform/ajax-unread.php on line 29
+[15-Dec-2025 01:15:45 Europe/Istanbul] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/dijicent/public_html/platform/ajax-unread.php on line 29
+[15-Dec-2025 01:15:46 Europe/Istanbul] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/dijicent/public_html/platform/ajax-unread.php on line 29
+[15-Dec-2025 01:16:22 Europe/Istanbul] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/dijicent/public_html/platform/ajax-unread.php on line 29
+[15-Dec-2025 03:15:50 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/dijicent/public_html/platform/ticket.php on line 53
+[21-Dec-2025 18:40:57 Europe/Istanbul] ---- MUTABAKAT UPLOAD HIT ---- method=POST user_id=- agency_id=-
+[21-Dec-2025 18:40:57 Europe/Istanbul] FILES=["file"]
+[21-Dec-2025 18:40:57 Europe/Istanbul] FILEMETA={"file":{"name":"Kitap1.xlsx","full_path":"Kitap1.xlsx","type":"application\/vnd.openxmlformats-officedocument.spreadsheetml.sheet","tmp_name":"\/tmp\/phpPmGBri","error":0,"size":10402}}

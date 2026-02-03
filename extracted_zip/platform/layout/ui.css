@@ -1,0 +1,115 @@
+/* ==========================
+   UI V2 WOW OVERRIDES (SAFE)
+   En alta yapıştır.
+========================== */
+
+/* Temel arka plan + daha premium tipografi hissi */
+html, body { height: 100%; }
+body{
+  background:
+    radial-gradient(1200px 520px at 50% -120px, rgba(29,78,216,.20) 0%, rgba(29,78,216,0) 60%),
+    radial-gradient(900px 480px at 12% 10%, rgba(14,165,233,.18) 0%, rgba(14,165,233,0) 55%),
+    radial-gradient(900px 480px at 88% 20%, rgba(99,102,241,.14) 0%, rgba(99,102,241,0) 55%),
+    #f6f8fc !important;
+  color:#0f172a;
+}
+
+/* Genel container biraz daha nefes alsın */
+.container, .container-fluid{
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+}
+
+/* Üst bar / header: glass + premium */
+header, .topbar, .navbar{
+  background: rgba(255,255,255,.72) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(229,231,235,.75) !important;
+}
+
+/* Logo/brand alanı daha “ürün” dursun */
+.navbar-brand, .brand, .logo, .app-brand{
+  font-weight: 900 !important;
+  letter-spacing: .2px;
+}
+
+/* Menü linkleri: pill + hover animasyonu */
+.nav a, .nav-link, .navbar-nav .nav-link{
+  border-radius: 14px !important;
+  transition: transform .12s ease, box-shadow .12s ease, background .12s ease, border-color .12s ease;
+}
+.nav a:hover, .nav-link:hover, .navbar-nav .nav-link:hover{
+  background: rgba(255,255,255,.92) !important;
+  box-shadow: 0 14px 34px rgba(15,23,42,.10) !important;
+  transform: translateY(-1px);
+}
+
+/* Aktif sekme daha belirgin */
+.nav .active, .nav-link.active, .navbar-nav .active>.nav-link{
+  background: linear-gradient(135deg,#1d4ed8,#0ea5e9) !important;
+  color: #fff !important;
+  box-shadow: 0 16px 40px rgba(15,23,42,.16) !important;
+}
+
+/* Kartlar: daha premium, daha “soft” */
+.card, .panel, .box, .content-box{
+  background: rgba(255,255,255,.92) !important;
+  border: 1px solid rgba(229,231,235,.80) !important;
+  border-radius: 18px !important;
+  box-shadow: 0 18px 50px rgba(15,23,42,.10) !important;
+}
+.card:hover, .panel:hover, .box:hover, .content-box:hover{
+  box-shadow: 0 26px 70px rgba(15,23,42,.14) !important;
+  transform: translateY(-1px);
+}
+
+/* Kart başlıkları daha “net” */
+.card-title, h1, h2, h3{
+  letter-spacing: -.2px;
+}
+h1, .h1 { font-weight: 900 !important; }
+h2, .h2, h3, .h3 { font-weight: 800 !important; }
+
+/* Butonlar: ürün hissi (primary gradient) */
+.btn, button, input[type="submit"]{
+  border-radius: 14px !important;
+  font-weight: 900 !important;
+  transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
+}
+.btn:hover, button:hover, input[type="submit"]:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 16px 38px rgba(15,23,42,.14) !important;
+}
+.btn-primary, .btn-success{
+  border: 0 !important;
+  background: linear-gradient(135deg,#1d4ed8,#0ea5e9) !important;
+}
+.btn-danger{
+  border: 0 !important;
+  background: linear-gradient(135deg,#ef4444,#f97316) !important;
+}
+
+/* Inputlar: daha modern focus */
+input, select, textarea, .form-control{
+  border-radius: 14px !important;
+  border: 1px solid rgba(229,231,235,.9) !important;
+  background: rgba(255,255,255,.92) !important;
+}
+input:focus, select:focus, textarea:focus, .form-control:focus{
+  border-color: rgba(29,78,216,.35) !important;
+  box-shadow: 0 0 0 4px rgba(29,78,216,.12) !important;
+}
+
+/* Badge/etiketler */
+.badge{
+  border-radius: 999px !important;
+  padding: 6px 10px !important;
+  font-weight: 900 !important;
+}
+
+/* Sayfa içi boşluklar biraz daha iyi dursun */
+main, .page, .content, .wrapper{
+  padding-top: 18px;
+  padding-bottom: 24px;
+}
