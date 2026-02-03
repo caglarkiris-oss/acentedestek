@@ -223,7 +223,7 @@ try {
     if (!$ins) throw new Exception("Prepare mutabakat_v2_rows fail: " . $conn->error);
 
     $ins->bind_param(
-        "iiisississssssssi",
+        "iiisissssssssdsi",
         $periodId,
         $mainAgencyId,
         $taliAgencyId,
