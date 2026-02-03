@@ -1,0 +1,12 @@
+HTTP/1.1 302 Found
+Host: localhost:8082
+Date: Tue, 03 Feb 2026 20:36:17 GMT
+Connection: close
+X-Powered-By: PHP/8.2.29
+Set-Cookie: PHPSESSID=pkf307re3k6m6niqai699ru2cs; path=/; HttpOnly; SameSite=Lax
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate
+Pragma: no-cache
+Location: //mutabakat/havuz.php
+Content-type: text/html; charset=UTF-8
+
