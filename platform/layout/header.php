@@ -547,9 +547,50 @@ $userRole = (string)($_SESSION['role'] ?? '');
         </div>
       </div>
       <div class="topbar-right">
-        <button class="topbar-btn">
-          <i data-lucide="bell"></i>
+        <!-- Dark Mode Toggle -->
+        <button class="topbar-btn" onclick="toggleDarkMode()" title="Karanlık/Aydınlık Mod">
+          <i data-lucide="moon" id="darkModeIcon"></i>
         </button>
+        
+        <!-- Notifications -->
+        <div class="notification-wrapper">
+          <button class="topbar-btn" onclick="toggleNotifications()" id="notifBtn">
+            <i data-lucide="bell"></i>
+            <span class="notification-badge" id="notifBadge">3</span>
+          </button>
+          <div class="notification-dropdown" id="notifDropdown">
+            <div class="notif-header">
+              <span>Bildirimler</span>
+              <button onclick="clearAllNotifs()">Tümünü Temizle</button>
+            </div>
+            <div class="notif-list">
+              <div class="notif-item unread">
+                <div class="notif-icon green"><i data-lucide="check-circle"></i></div>
+                <div class="notif-content">
+                  <div class="notif-title">Yeni ticket yanıtlandı</div>
+                  <div class="notif-time">2 dakika önce</div>
+                </div>
+              </div>
+              <div class="notif-item unread">
+                <div class="notif-icon orange"><i data-lucide="alert-triangle"></i></div>
+                <div class="notif-content">
+                  <div class="notif-title">5 eşleşmeyen kayıt var</div>
+                  <div class="notif-time">1 saat önce</div>
+                </div>
+              </div>
+              <div class="notif-item">
+                <div class="notif-icon blue"><i data-lucide="file-text"></i></div>
+                <div class="notif-content">
+                  <div class="notif-title">Aylık rapor hazır</div>
+                  <div class="notif-time">Dün</div>
+                </div>
+              </div>
+            </div>
+            <a href="#" class="notif-footer">Tüm bildirimleri gör</a>
+          </div>
+        </div>
+        
+        <!-- User Menu -->
         <div class="user-menu" id="userMenu">
           <button class="user-menu-btn" onclick="toggleUserMenu()">
             <div class="user-avatar"><?= $userName ? strtoupper(substr($userName,0,2)) : 'U' ?></div>
