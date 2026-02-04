@@ -3,25 +3,36 @@
   </div>
 </div>
 
-<!-- Toast Container -->
-<div id="toast" class="toast" aria-live="polite" aria-atomic="true"></div>
-
-<!-- App JavaScript -->
-<script src="<?= base_url('layout/app.js') ?>"></script>
-
-<!-- Initialize Lucide Icons -->
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    if (typeof lucide !== 'undefined') {
-      lucide.createIcons();
+  lucide.createIcons();
+  
+  function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('collapsed');
+    localStorage.setItem('sidebar-collapsed', sidebar.classList.contains('collapsed'));
+  }
+  
+  function toggleMobileSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('mobile-open');
+  }
+  
+  function toggleUserMenu() {
+    const menu = document.getElementById('userMenu');
+    menu.classList.toggle('open');
+  }
+  
+  // Load saved state
+  if (localStorage.getItem('sidebar-collapsed') === 'true') {
+    document.getElementById('sidebar').classList.add('collapsed');
+  }
+  
+  // Close dropdown on outside click
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.user-menu')) {
+      document.getElementById('userMenu').classList.remove('open');
     }
   });
-  // Also run immediately in case DOM is already ready
-  if (document.readyState !== 'loading') {
-    if (typeof lucide !== 'undefined') {
-      lucide.createIcons();
-    }
-  }
 </script>
 </body>
 </html>
