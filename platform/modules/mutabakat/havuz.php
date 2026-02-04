@@ -891,37 +891,61 @@ require_once __DIR__ . '/../../layout/header.php';
     </div>
   </div>
 
-  <!-- Upload / Actions -->
   <?php if ($allowedTab === 'havuz' && $isTali && $taliWorkMode === 'csv'): ?>
-    <div class="upload-box">
-      <div class="upload-box-title">Tali CSV Yukle (workmode: csv)</div>
-      <form method="post" enctype="multipart/form-data">
-        <input type="hidden" name="action" value="tali_csv_upload">
-        <input type="file" name="csv_file" accept=".csv,text/csv" required class="form-control">
-        <button type="submit" class="btn btn-primary">Yukle</button>
-      </form>
-      <div class="upload-box-hint">Basliklar: T.C/V.N., Sigortali, Plaka, Sirket, Brans, Tip, Tanzim, Police No, Brut Prim</div>
+  <div class="card u-mt-4">
+    <div class="card-body">
+      <div class="upload-box">
+        <div>
+          <div class="upload-box-title">
+            <i data-lucide="upload-cloud" style="display: inline; width: 18px; height: 18px; vertical-align: middle; margin-right: 6px;"></i>
+            Tali CSV Yükle
+          </div>
+          <div class="upload-box-hint">Başlıklar: T.C/V.N., Sigortalı, Plaka, Şirket, Branş, Tip, Tanzim, Poliçe No, Brüt Prim</div>
+        </div>
+        <form method="post" enctype="multipart/form-data" class="u-flex u-gap-3 u-items-center">
+          <input type="hidden" name="action" value="tali_csv_upload">
+          <input type="file" name="csv_file" accept=".csv,text/csv" required class="form-control" style="max-width: 280px;">
+          <button type="submit" class="btn btn-primary">
+            <i data-lucide="upload"></i>
+            Yükle
+          </button>
+        </form>
+      </div>
     </div>
+  </div>
   <?php endif; ?>
 
   <?php if ($allowedTab === 'ana_csv' && $isMain): ?>
-    <div class="upload-box">
-      <div>
-        <div class="upload-box-title">Ana acente CSV Yukle</div>
-        <div class="upload-box-hint">Yuklenen kayitlar sadece bu sekmede gorunur. Eslestir'e basinca Eslesen/Eslesmeyen'e ayrilir.</div>
-      </div>
-      <div>
-        <form method="post" enctype="multipart/form-data">
-          <input type="hidden" name="action" value="ana_csv_upload">
-          <input type="file" name="csv_file" accept=".csv,text/csv" required class="form-control">
-          <button type="submit" class="btn btn-primary">Yukle</button>
-        </form>
-        <form method="post">
-          <input type="hidden" name="action" value="run_match">
-          <button type="submit" class="btn btn-success">Eslestir</button>
-        </form>
+  <div class="card u-mt-4">
+    <div class="card-body">
+      <div class="upload-box">
+        <div>
+          <div class="upload-box-title">
+            <i data-lucide="file-spreadsheet" style="display: inline; width: 18px; height: 18px; vertical-align: middle; margin-right: 6px;"></i>
+            Ana Acente CSV Yükle
+          </div>
+          <div class="upload-box-hint">Yüklenen kayıtlar sadece bu sekmede görünür. Eşleştir'e basınca Eşleşen/Eşleşmeyen'e ayrılır.</div>
+        </div>
+        <div class="u-flex u-gap-3 u-items-center">
+          <form method="post" enctype="multipart/form-data" class="u-flex u-gap-3 u-items-center">
+            <input type="hidden" name="action" value="ana_csv_upload">
+            <input type="file" name="csv_file" accept=".csv,text/csv" required class="form-control" style="max-width: 280px;">
+            <button type="submit" class="btn btn-primary">
+              <i data-lucide="upload"></i>
+              Yükle
+            </button>
+          </form>
+          <form method="post">
+            <input type="hidden" name="action" value="run_match">
+            <button type="submit" class="btn btn-success">
+              <i data-lucide="git-merge"></i>
+              Eşleştir
+            </button>
+          </form>
+        </div>
       </div>
     </div>
+  </div>
   <?php endif; ?>
 
   <!-- Tables -->
