@@ -1,7 +1,5 @@
 <?php
-// /platform/modules/users/login.php
 // Enterprise Login - Premium Banking/Insurance Style
-
 require_once __DIR__ . '/../../helpers.php';
 require_once __DIR__ . '/../../db.php';
 
@@ -18,13 +16,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = trim($_POST['email'] ?? '');
     $password = $_POST['password'] ?? '';
     $role = (string)($_POST['role'] ?? 'ACENTE_YETKILISI');
-    $allowedRoles = ['ACENTE_YETKILISI','TALI_ACENTE_YETKILISI','PERSONEL'];
+    $allowedRoles = ['ACENTE_YETKILISI','TALI_ACENTE_YETKILISI','PERSONEL','SUPERADMIN'];
     if (!in_array($role, $allowedRoles, true)) {
         $role = 'ACENTE_YETKILISI';
     }
     $agency_id = (int)($_POST['agency_id'] ?? 1);
 
-    // Test login - gerçek sistemde users tablosundan doğrulama yapılır
     if ($email !== '' && $password !== '') {
         session_regenerate_id(true);
         $_SESSION['user_id'] = 1;
@@ -32,7 +29,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['role'] = $role;
         $_SESSION['name'] = $email;
         $_SESSION['email'] = $email;
-
         redirect(route_url('mutabakat/havuz'));
     } else {
         $error = 'Email ve şifre giriniz.';
@@ -45,131 +41,111 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Giriş - <?= h($appName) ?></title>
-  
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  
-  <!-- Lucide Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-  
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    
-    :root {
-      --primary-900: #0f172a;
-      --primary-800: #1e293b;
-      --primary-700: #334155;
-      --accent-600: #2563eb;
-      --accent-500: #3b82f6;
-      --bg-page: #f6f8fb;
-      --bg-card: #ffffff;
-      --border: #e5e7eb;
-      --text-primary: #0f172a;
-      --text-muted: #64748b;
-      --danger: #dc2626;
-      --danger-light: rgba(220, 38, 38, 0.08);
-      --danger-border: rgba(220, 38, 38, 0.2);
-      --shadow-xl: 0 20px 25px rgba(15, 23, 42, 0.10), 0 10px 10px rgba(15, 23, 42, 0.04);
-      --shadow-2xl: 0 25px 50px rgba(15, 23, 42, 0.15);
-      --radius-lg: 12px;
-      --radius-xl: 16px;
-      --radius-2xl: 20px;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      font-size: 14px;
-      line-height: 1.5;
-      color: var(--text-primary);
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 24px;
-      background: 
-        linear-gradient(135deg, rgba(15, 23, 42, 0.04) 0%, transparent 50%),
-        linear-gradient(225deg, rgba(37, 99, 235, 0.06) 0%, transparent 50%),
-        radial-gradient(ellipse at top right, rgba(37, 99, 235, 0.08) 0%, transparent 60%),
-        var(--bg-page);
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0f172a 100%);
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
     }
     
-    .login-container {
+    body::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 30% 30%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+                  radial-gradient(circle at 70% 70%, rgba(37, 99, 235, 0.1) 0%, transparent 50%);
+      animation: pulse 15s ease-in-out infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1) rotate(0deg); }
+      50% { transform: scale(1.1) rotate(5deg); }
+    }
+    
+    .login-wrapper {
+      position: relative;
+      z-index: 1;
       width: 100%;
       max-width: 440px;
     }
     
     .login-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-2xl);
-      box-shadow: var(--shadow-2xl);
-      padding: 40px;
-      position: relative;
-      overflow: hidden;
+      background: rgba(255, 255, 255, 0.98);
+      border-radius: 24px;
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1);
+      padding: 48px 40px;
+      backdrop-filter: blur(20px);
     }
     
-    .login-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--primary-900) 0%, var(--accent-600) 100%);
+    .login-header {
+      text-align: center;
+      margin-bottom: 36px;
     }
     
     .login-logo {
-      width: 64px;
-      height: 64px;
-      margin: 0 auto 24px;
-      background: linear-gradient(135deg, var(--primary-800) 0%, var(--primary-900) 100%);
-      border-radius: var(--radius-xl);
+      width: 72px;
+      height: 72px;
+      background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+      border-radius: 18px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #fff;
-      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.2);
+      margin: 0 auto 20px;
+      box-shadow: 0 10px 40px rgba(30, 58, 138, 0.4);
     }
     
-    .login-logo i {
-      width: 32px;
-      height: 32px;
+    .login-logo svg {
+      width: 36px;
+      height: 36px;
+      color: white;
     }
     
     .login-title {
-      font-size: 24px;
-      font-weight: 700;
-      text-align: center;
-      color: var(--text-primary);
+      font-size: 26px;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.5px;
       margin-bottom: 8px;
-      letter-spacing: -0.02em;
     }
     
     .login-subtitle {
       font-size: 14px;
-      color: var(--text-muted);
-      text-align: center;
-      margin-bottom: 32px;
+      color: #64748b;
+      font-weight: 500;
     }
     
-    .error-msg {
-      padding: 12px 16px;
-      background: var(--danger-light);
-      border: 1px solid var(--danger-border);
-      border-radius: var(--radius-lg);
-      color: #991b1b;
-      font-size: 13px;
-      margin-bottom: 20px;
+    .error-box {
+      background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+      border: 1px solid #fecaca;
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 24px;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
+      color: #991b1b;
+      font-size: 14px;
+      font-weight: 500;
     }
     
-    .error-msg i {
-      width: 18px;
-      height: 18px;
+    .error-box svg {
+      width: 20px;
+      height: 20px;
       flex-shrink: 0;
     }
     
@@ -181,180 +157,162 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       display: block;
       font-size: 13px;
       font-weight: 600;
-      color: var(--primary-700);
+      color: #334155;
       margin-bottom: 8px;
+      letter-spacing: 0.3px;
     }
     
-    .form-control {
+    .form-input {
       width: 100%;
-      padding: 12px 16px;
+      padding: 14px 16px;
       font-family: inherit;
-      font-size: 14px;
-      color: var(--text-primary);
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
+      font-size: 15px;
+      color: #0f172a;
+      background: #f8fafc;
+      border: 2px solid #e2e8f0;
+      border-radius: 12px;
       outline: none;
-      transition: all 0.15s ease;
+      transition: all 0.2s ease;
     }
     
-    .form-control:hover {
+    .form-input:hover {
       border-color: #cbd5e1;
     }
     
-    .form-control:focus {
-      border-color: var(--accent-500);
-      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    .form-input:focus {
+      border-color: #3b82f6;
+      background: white;
+      box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
     }
     
-    .form-control::placeholder {
+    .form-input::placeholder {
       color: #94a3b8;
     }
     
-    select.form-control {
-      cursor: pointer;
-      padding-right: 40px;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 12px center;
-      background-size: 18px;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-    }
-    
-    .btn-login {
-      width: 100%;
-      padding: 14px 20px;
-      font-family: inherit;
-      font-size: 15px;
-      font-weight: 600;
-      color: #fff;
-      background: linear-gradient(180deg, var(--primary-800) 0%, var(--primary-900) 100%);
-      border: none;
-      border-radius: var(--radius-lg);
-      cursor: pointer;
-      transition: all 0.15s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 8px;
-    }
-    
-    .btn-login:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.2);
-    }
-    
-    .btn-login:active {
-      transform: translateY(0);
-    }
-    
-    .btn-login i {
-      width: 18px;
-      height: 18px;
-    }
-    
-    .login-footer {
-      margin-top: 24px;
-      text-align: center;
-    }
-    
-    .hint {
-      font-size: 12px;
-      color: var(--text-muted);
-      padding: 12px 16px;
-      background: rgba(15, 23, 42, 0.03);
-      border-radius: var(--radius-lg);
-      border: 1px dashed var(--border);
-    }
-    
-    .login-links {
-      margin-top: 16px;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-    }
-    
-    .login-links a {
-      font-size: 13px;
-      color: var(--text-muted);
-      text-decoration: none;
-      transition: color 0.15s ease;
-    }
-    
-    .login-links a:hover {
-      color: var(--accent-600);
-    }
-    
-    /* Two column row for test fields */
     .form-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 16px;
     }
     
+    .btn-login {
+      width: 100%;
+      padding: 16px 24px;
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 700;
+      color: white;
+      background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 20px rgba(30, 58, 138, 0.3);
+      margin-top: 8px;
+    }
+    
+    .btn-login:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(30, 58, 138, 0.4);
+    }
+    
+    .btn-login:active {
+      transform: translateY(0);
+    }
+    
+    .btn-login svg {
+      width: 20px;
+      height: 20px;
+    }
+    
+    .login-footer {
+      margin-top: 28px;
+      text-align: center;
+    }
+    
+    .login-hint {
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      border: 1px solid #bae6fd;
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-size: 12px;
+      color: #0369a1;
+      font-weight: 500;
+    }
+    
+    .login-links {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+    }
+    
+    .login-links a {
+      font-size: 13px;
+      color: #64748b;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    
+    .login-links a:hover {
+      color: #1e3a8a;
+    }
+    
     @media (max-width: 480px) {
-      .login-card {
-        padding: 32px 24px;
-      }
-      
-      .form-row {
-        grid-template-columns: 1fr;
-      }
+      .login-card { padding: 36px 24px; }
+      .form-row { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-  <div class="login-container">
+  <div class="login-wrapper">
     <div class="login-card">
-      <!-- Logo -->
-      <div class="login-logo">
-        <i data-lucide="shield-check"></i>
+      <div class="login-header">
+        <div class="login-logo">
+          <i data-lucide="shield-check"></i>
+        </div>
+        <h1 class="login-title"><?= h($appName) ?></h1>
+        <p class="login-subtitle">Sigorta & Mutabakat Yönetim Platformu</p>
       </div>
-      
-      <!-- Title -->
-      <h1 class="login-title"><?= h($appName) ?></h1>
-      <p class="login-subtitle">Sigorta & Mutabakat Yönetim Sistemi</p>
-      
-      <!-- Error Message -->
+
       <?php if ($error): ?>
-        <div class="error-msg">
+        <div class="error-box">
           <i data-lucide="alert-circle"></i>
-          <?= h($error) ?>
+          <span><?= h($error) ?></span>
         </div>
       <?php endif; ?>
 
-      <!-- Login Form -->
       <form method="post">
         <?= csrf_field() ?>
         
         <div class="form-group">
           <label class="form-label">Email Adresi</label>
-          <input type="email" name="email" class="form-control" placeholder="ornek@sirket.com" required autocomplete="email">
+          <input type="email" name="email" class="form-input" placeholder="ornek@sirket.com" required autocomplete="email">
         </div>
 
         <div class="form-group">
           <label class="form-label">Şifre</label>
-          <input type="password" name="password" class="form-control" placeholder="••••••••" required autocomplete="current-password">
+          <input type="password" name="password" class="form-input" placeholder="••••••••" required autocomplete="current-password">
         </div>
 
-        <!-- Test Fields (can be removed in production) -->
         <div class="form-row">
           <div class="form-group">
             <label class="form-label">Rol (Test)</label>
-            <select name="role" class="form-control">
+            <select name="role" class="form-input">
               <option value="ACENTE_YETKILISI">Ana Acente</option>
               <option value="TALI_ACENTE_YETKILISI">Tali Acente</option>
               <option value="PERSONEL">Personel</option>
               <option value="SUPERADMIN">Superadmin</option>
             </select>
           </div>
-
           <div class="form-group">
-            <label class="form-label">Agency ID (Test)</label>
-            <input type="number" name="agency_id" class="form-control" value="1" min="1">
+            <label class="form-label">Agency ID</label>
+            <input type="number" name="agency_id" class="form-input" value="1" min="1">
           </div>
         </div>
 
@@ -364,20 +322,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </button>
       </form>
 
-      <!-- Footer -->
       <div class="login-footer">
-        <p class="hint">Test ortamı: Herhangi bir email/şifre kombinasyonu ile giriş yapabilirsiniz.</p>
-        
+        <div class="login-hint">
+          Test ortamı: Herhangi bir email/şifre ile giriş yapabilirsiniz
+        </div>
         <div class="login-links">
           <a href="#">Şifremi Unuttum</a>
-          <a href="#">Yardım</a>
+          <a href="#">Yardım Merkezi</a>
         </div>
       </div>
     </div>
   </div>
-
-  <script>
-    lucide.createIcons();
-  </script>
+  <script>lucide.createIcons();</script>
 </body>
 </html>
