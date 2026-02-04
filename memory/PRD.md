@@ -108,6 +108,15 @@ PHP + MySQL tabanlı, multi-tenant sigorta mutabakat sistemi. Sigorta acenteleri
 - [x] Ticket mutabakat kaydı
 - [x] Export (CSV)
 
+## Tamamlanan Özellikler (v1.1 - Onay Mekanizması)
+
+- [x] Atama durumları: BEKLEMEDE → ONAYLANDI / REDDEDILDI / ITIRAZDA
+- [x] Tali acente onay/red/itiraz işlemleri
+- [x] Red sebebi zorunluluğu
+- [x] İtiraz notu ve takibi
+- [x] Atama detay modal (satır listesi)
+- [x] Ana acente için durum takibi
+
 ---
 
 ## Backlog / P1 Features
