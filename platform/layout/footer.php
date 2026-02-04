@@ -4,7 +4,10 @@
 </div>
 
 <script>
-  lucide.createIcons();
+  // Initialize Lucide icons after DOM is ready
+  document.addEventListener('DOMContentLoaded', function() {
+    lucide.createIcons();
+  });
   
   function toggleSidebar() {
     const sidebar = document.getElementById('sidebar');
