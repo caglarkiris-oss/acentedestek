@@ -1,4 +1,11 @@
+/* ========================================
+   ENTERPRISE DESIGN SYSTEM - MAIN ENTRY
+   Insurance/Banking SaaS Platform
+   ======================================== */
+
 @import url('./tokens.css');
 @import url('./components.css');
 @import url('./layout.css');
 @import url('./pages.css');
+
+/* Additional global styles and overrides */

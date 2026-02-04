@@ -1,81 +1,258 @@
 (function(){
-  // Toast
-  window.showToast = function(msg, duration){
-    var el = document.getElementById('toast');
-    if(!el){
+  'use strict';
+
+  // ===== SIDEBAR COLLAPSE TOGGLE =====
+  const appShell = document.getElementById('appShell') || document.querySelector('.app-shell');
+  const sidebarToggle = document.querySelector('[data-sidebar-toggle]');
+  
+  // Check for saved preference
+  const savedState = localStorage.getItem('sidebar-collapsed');
+  if (savedState === 'true' && appShell) {
+    appShell.classList.add('sidebar-collapsed');
+  }
+
+  // Sidebar toggle handler
+  document.addEventListener('click', function(e) {
+    const toggle = e.target.closest('[data-sidebar-toggle]');
+    if (!toggle || !appShell) return;
+    
+    // Check if mobile (sidebar slides in/out) or desktop (collapse/expand)
+    const isMobile = window.innerWidth <= 1024;
+    
+    if (isMobile) {
+      appShell.classList.toggle('sidebar-open');
+    } else {
+      appShell.classList.toggle('sidebar-collapsed');
+      // Save preference
+      localStorage.setItem('sidebar-collapsed', appShell.classList.contains('sidebar-collapsed'));
+    }
+    
+    e.preventDefault();
+  });
+
+  // Close sidebar on mobile when clicking overlay
+  document.addEventListener('click', function(e) {
+    if (e.target.classList && e.target.classList.contains('sidebar-overlay')) {
+      appShell && appShell.classList.remove('sidebar-open');
+    }
+  });
+
+  // Add overlay element if not exists
+  if (!document.querySelector('.sidebar-overlay')) {
+    const overlay = document.createElement('div');
+    overlay.className = 'sidebar-overlay';
+    document.body.appendChild(overlay);
+  }
+
+  // ===== TOAST NOTIFICATIONS =====
+  window.showToast = function(msg, type, duration) {
+    let el = document.getElementById('toast');
+    if (!el) {
       el = document.createElement('div');
-      el.id='toast';
-      el.className='toast';
+      el.id = 'toast';
+      el.className = 'toast';
       document.body.appendChild(el);
     }
+    
     el.textContent = msg || '';
-    el.classList.add('show');
+    el.className = 'toast show';
+    if (type) {
+      el.classList.add(type);
+    }
+    
     clearTimeout(el._t);
-    el._t = setTimeout(function(){ el.classList.remove('show'); }, duration || 2400);
+    el._t = setTimeout(function() {
+      el.classList.remove('show');
+    }, duration || 3000);
   };
 
-  // Dropdowns
-  document.addEventListener('click', function(e){
-    var ddToggle = e.target.closest('[data-dd-toggle]');
-    if(ddToggle){
-      var dd = ddToggle.closest('.dd');
-      if(dd){ dd.classList.toggle('is-open'); }
+  // ===== DROPDOWN MENUS =====
+  document.addEventListener('click', function(e) {
+    const ddToggle = e.target.closest('[data-dd-toggle]');
+    
+    if (ddToggle) {
+      const dd = ddToggle.closest('.dd');
+      if (dd) {
+        // Close all other dropdowns
+        document.querySelectorAll('.dd.is-open').forEach(function(n) {
+          if (n !== dd) n.classList.remove('is-open');
+        });
+        dd.classList.toggle('is-open');
+      }
       e.preventDefault();
+      e.stopPropagation();
       return;
     }
-    // close all dropdowns if click outside
-    document.querySelectorAll('.dd.is-open').forEach(function(n){
-      if(!e.target.closest('.dd')) n.classList.remove('is-open');
-    });
+    
+    // Close all dropdowns when clicking outside
+    if (!e.target.closest('.dd')) {
+      document.querySelectorAll('.dd.is-open').forEach(function(n) {
+        n.classList.remove('is-open');
+      });
+    }
   });
 
-  // Sidebar (mobile)
-  document.addEventListener('click', function(e){
-    var t = e.target.closest('[data-sidebar-toggle]');
-    if(!t) return;
-    var shell = document.querySelector('.app-shell');
-    if(shell) shell.classList.toggle('sidebar-open');
-  });
-
-  // Copyable table column
-  (function(){
-    function fallbackCopy(text){
-      var ta=document.createElement('textarea');
-      ta.value=text; ta.setAttribute('readonly','');
-      ta.style.position='fixed'; ta.style.left='-9999px';
+  // ===== COPYABLE TABLE COLUMNS =====
+  (function() {
+    function fallbackCopy(text) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.left = '-9999px';
       document.body.appendChild(ta);
       ta.select();
-      try{ document.execCommand('copy'); }catch(_){}
+      try {
+        document.execCommand('copy');
+      } catch (e) {
+        console.error('Copy failed:', e);
+      }
       document.body.removeChild(ta);
     }
-    function copyText(text){
-      if(navigator.clipboard && navigator.clipboard.writeText){
-        navigator.clipboard.writeText(text).catch(function(){ fallbackCopy(text); });
-      }else fallbackCopy(text);
+
+    function copyText(text) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).catch(function() {
+          fallbackCopy(text);
+        });
+      } else {
+        fallbackCopy(text);
+      }
     }
-    document.addEventListener('click', function(e){
-      var th = e.target.closest('th');
-      if(!th) return;
-      var table = th.closest('table.copyable-table');
-      if(!table) return;
-      var tr = th.parentElement;
-      var ths = Array.prototype.slice.call(tr.children);
-      var colIndex = ths.indexOf(th);
-      if(colIndex < 0) return;
-      var rows = table.querySelectorAll('tbody tr');
-      var values=[];
-      rows.forEach(function(r){
-        var cells=r.children;
-        if(!cells || colIndex>=cells.length) return;
-        var cell=cells[colIndex];
-        var inp=cell.querySelector('input,textarea,select');
-        var v='';
-        if(inp){ v=(inp.value||'').trim(); } else { v=(cell.innerText||'').trim(); }
-        if(v!=='') values.push(v);
+
+    document.addEventListener('click', function(e) {
+      const th = e.target.closest('th');
+      if (!th) return;
+      
+      const table = th.closest('table.copyable-table');
+      if (!table) return;
+      
+      const tr = th.parentElement;
+      const ths = Array.prototype.slice.call(tr.children);
+      const colIndex = ths.indexOf(th);
+      
+      if (colIndex < 0) return;
+      
+      const rows = table.querySelectorAll('tbody tr');
+      const values = [];
+      
+      rows.forEach(function(r) {
+        const cells = r.children;
+        if (!cells || colIndex >= cells.length) return;
+        
+        const cell = cells[colIndex];
+        const inp = cell.querySelector('input, textarea, select');
+        let v = '';
+        
+        if (inp) {
+          v = (inp.value || '').trim();
+        } else {
+          v = (cell.innerText || '').trim();
+        }
+        
+        if (v !== '') {
+          values.push(v);
+        }
       });
-      if(values.length===0){ showToast('Kopyalanacak veri yok.'); return; }
+      
+      if (values.length === 0) {
+        showToast('Kopyalanacak veri yok.', 'warning');
+        return;
+      }
+      
       copyText(values.join('\n'));
-      showToast('"' + ((th.innerText||'Kolon').trim()) + '" sütunu kopyalandı ('+values.length+').');
+      showToast('"' + ((th.innerText || 'Kolon').trim()) + '" sütunu kopyalandı (' + values.length + ' satır).', 'success');
     });
   })();
+
+  // ===== RESPONSIVE HELPERS =====
+  function handleResize() {
+    const isMobile = window.innerWidth <= 1024;
+    
+    if (isMobile && appShell) {
+      // Ensure sidebar is closed on mobile when resizing down
+      appShell.classList.remove('sidebar-collapsed');
+    }
+  }
+
+  window.addEventListener('resize', debounce(handleResize, 150));
+
+  // ===== UTILITY: DEBOUNCE =====
+  function debounce(func, wait) {
+    let timeout;
+    return function executedFunction() {
+      const context = this;
+      const args = arguments;
+      const later = function() {
+        timeout = null;
+        func.apply(context, args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  }
+
+  // ===== FORM ENHANCEMENTS =====
+  // Auto-focus first input in modals
+  document.addEventListener('click', function(e) {
+    const modal = e.target.closest('.modal');
+    if (modal) {
+      const firstInput = modal.querySelector('input:not([type="hidden"]), textarea, select');
+      if (firstInput) {
+        setTimeout(function() {
+          firstInput.focus();
+        }, 100);
+      }
+    }
+  });
+
+  // ===== ESCAPE KEY HANDLER =====
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      // Close dropdowns
+      document.querySelectorAll('.dd.is-open').forEach(function(n) {
+        n.classList.remove('is-open');
+      });
+      
+      // Close mobile sidebar
+      if (appShell) {
+        appShell.classList.remove('sidebar-open');
+      }
+      
+      // Close modals
+      document.querySelectorAll('.modal-overlay.show, .modal-backdrop.show').forEach(function(m) {
+        m.classList.remove('show');
+      });
+    }
+  });
+
+  // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
+  document.addEventListener('click', function(e) {
+    const link = e.target.closest('a[href^="#"]');
+    if (!link) return;
+    
+    const targetId = link.getAttribute('href').slice(1);
+    const target = document.getElementById(targetId);
+    
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  });
+
+  // ===== TOOLTIP INITIALIZATION =====
+  // Add tooltips to nav items for collapsed sidebar
+  document.querySelectorAll('.nav-item').forEach(function(item) {
+    const text = item.querySelector('span:not(.nav-icon)');
+    if (text) {
+      item.setAttribute('data-tooltip', text.textContent.trim());
+    }
+  });
+
+  // ===== INITIALIZE =====
+  handleResize();
+
 })();
