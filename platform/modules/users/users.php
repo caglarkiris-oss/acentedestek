@@ -131,33 +131,50 @@ function tr_dt($dt){
 
 
 
-<section class="page">
-<section class="card">
+<!-- Page Content -->
+<div class="card">
+  <div class="card-header">
+    <div>
+      <h2 class="card-title">Kullanıcılar</h2>
+      <p class="card-subtitle">Sistem kullanıcılarını yönetin</p>
+    </div>
+    <?php if (in_array($role,['SUPERADMIN','ACENTE_YETKILISI'],true)): ?>
+      <a class="btn btn-primary" href="<?= base_url('users-create.php') ?>" data-testid="create-user-btn">
+        <i data-lucide="user-plus"></i>
+        Yeni Kullanıcı
+      </a>
+    <?php endif; ?>
+  </div>
 
-<div class="u-top">
-  <h2 class="u-title">Kullanıcılar</h2>
-  <?php if (in_array($role,['SUPERADMIN','ACENTE_YETKILISI'],true)): ?>
-    <a class="btn primary" href="<?= base_url('users-create.php') ?>">+ Yeni Kullanıcı</a>
-  <?php endif; ?>
-</div>
+  <!-- Filters -->
+  <div style="padding: var(--sp-4) var(--sp-5); border-bottom: 1px solid var(--border); background: var(--bg-page);">
+    <div class="u-flex u-gap-3 u-items-center">
+      <div class="u-flex-1" style="max-width: 320px; position: relative;">
+        <i data-lucide="search" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); width: 18px; height: 18px; color: var(--text-muted);"></i>
+        <input id="q" class="form-control" placeholder="İsim, email veya rol ara..." style="padding-left: 40px;">
+      </div>
+      <select id="fRole" class="form-control" style="width: 220px;">
+        <option value="">Rol: Tümü</option>
+        <option value="ACENTE_YETKILISI">Acente Yetkilisi</option>
+        <option value="TALI_ACENTE_YETKILISI">Tali Acente Yetkilisi</option>
+        <option value="PERSONEL">Personel</option>
+      </select>
+    </div>
+  </div>
 
-<div class="filters">
-  <input id="q" class="input" placeholder="Canlı ara...">
-  <select id="fRole" class="input">
-    <option value="">Rol: Tümü</option>
-    <option value="ACENTE_YETKILISI">Acente Yetkilisi</option>
-    <option value="TALI_ACENTE_YETKILISI">Tali Acente Yetkilisi</option>
-    <option value="PERSONEL">Personel</option>
-  </select>
-</div>
-
-<div class="table-wrap">
-<table id="tbl">
-<thead>
-<tr>
-  <th>ID</th><th>Ad</th><th>Email</th><th>Rol</th>
-  <th>Acente</th><th>Bağlılık</th><th>Durum</th><th>Oluşturma</th><th></th>
-</tr>
+  <div class="table-wrap" style="border: none; border-radius: 0;">
+    <table class="table" id="tbl">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Kullanıcı</th>
+          <th>Rol</th>
+          <th>Acente</th>
+          <th>Bağlılık</th>
+          <th>Durum</th>
+          <th>Kayıt Tarihi</th>
+          <th style="text-align: right;">İşlem</th>
+        </tr>
 </thead>
 <tbody>
 <?php foreach($rows as $r):
