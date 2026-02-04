@@ -175,60 +175,67 @@ function tr_dt($dt){
           <th>Kayıt Tarihi</th>
           <th style="text-align: right;">İşlem</th>
         </tr>
-</thead>
-<tbody>
+      </thead>
+      <tbody>
 <?php foreach($rows as $r):
   $baglilik =
     $r['role']==='ACENTE_YETKILISI' ? 'Ana acente yetkilisi' :
     ($r['role']==='TALI_ACENTE_YETKILISI' ? 'Tali acente yetkilisi' :
     ($r['parent_id'] ? 'Tali acente personeli' : 'Ana acente personeli'));
 ?>
-<tr class="rowx"
-  data-hay="<?= strtolower($r['id'].' '.$r['name'].' '.$r['email'].' '.$baglilik) ?>"
-  data-role="<?= $r['role'] ?>">
-<td><?= $r['id'] ?></td>
-<td><?= htmlspecialchars($r['name']) ?></td>
-<td><?= htmlspecialchars($r['email']) ?></td>
-<td><span class="badge info"><?= $ROLE_MAP[$r['role']] ?></span></td>
-<td><?= htmlspecialchars($r['agency_name']) ?></td>
-<td><span class="chip-muted"><?= $baglilik ?></span></td>
-<td><?= $r['is_active']?'<span class="badge good">Aktif</span>':'<span class="badge bad">Pasif</span>' ?></td>
-<td><?= tr_dt($r['created_at']) ?></td>
-<td>
+        <tr class="rowx"
+            data-hay="<?= strtolower($r['id'].' '.$r['name'].' '.$r['email'].' '.$baglilik) ?>"
+            data-role="<?= $r['role'] ?>">
+          <td><span class="u-font-medium">#<?= $r['id'] ?></span></td>
+          <td>
+            <div class="u-flex u-items-center u-gap-3">
+              <div class="avatar avatar-sm"><?= strtoupper(substr($r['name'], 0, 2)) ?></div>
+              <div>
+                <div class="u-font-semibold"><?= htmlspecialchars($r['name']) ?></div>
+                <div class="u-text-sm u-text-muted"><?= htmlspecialchars($r['email']) ?></div>
+              </div>
+            </div>
+          </td>
+          <td><span class="badge badge-info"><?= $ROLE_MAP[$r['role']] ?></span></td>
+          <td class="u-text-muted"><?= htmlspecialchars($r['agency_name']) ?></td>
+          <td><span class="badge"><?= $baglilik ?></span></td>
+          <td><?= $r['is_active']?'<span class="badge badge-success">Aktif</span>':'<span class="badge badge-danger">Pasif</span>' ?></td>
+          <td class="u-text-muted u-text-sm"><?= tr_dt($r['created_at']) ?></td>
+          <td style="text-align: right;">
 <?php if($r['id']!==$userId && $role!=='PERSONEL'): ?>
-<form method="post" action="<?= base_url('users-toggle.php') ?>">
-  <input type="hidden" name="csrf" value="<?= $csrf ?>">
-  <input type="hidden" name="id" value="<?= $r['id'] ?>">
-  <input type="hidden" name="to" value="<?= $r['is_active']?0:1 ?>">
-  <button class="btn sm <?= $r['is_active']?'danger':'success' ?>">
-    <?= $r['is_active']?'Devre Dışı Bırak':'Aktifleştir' ?>
-  </button>
-</form>
+            <form method="post" action="<?= base_url('users-toggle.php') ?>" style="display: inline;">
+              <input type="hidden" name="csrf" value="<?= $csrf ?>">
+              <input type="hidden" name="id" value="<?= $r['id'] ?>">
+              <input type="hidden" name="to" value="<?= $r['is_active']?0:1 ?>">
+              <button class="btn btn-sm <?= $r['is_active']?'btn-danger':'btn-success' ?>">
+                <i data-lucide="<?= $r['is_active']?'x-circle':'check-circle' ?>" class="icon-sm"></i>
+                <?= $r['is_active']?'Devre Dışı':'Aktifleştir' ?>
+              </button>
+            </form>
 <?php endif; ?>
-</td>
-</tr>
+          </td>
+        </tr>
 <?php endforeach; ?>
-</tbody>
-</table>
+      </tbody>
+    </table>
+  </div>
 </div>
 
-</section>
-</section>
-
 <script>
-(()=> {
-  const q=document.getElementById('q'), r=document.getElementById('fRole');
-  const rows=[...document.querySelectorAll('.rowx')];
-  function f(){
-    const qv=(q.value||'').toLowerCase(), rv=r.value;
-    rows.forEach(tr=>{
-      const okQ=tr.dataset.hay.includes(qv);
-      const okR=!rv||tr.dataset.role===rv;
-      tr.style.display=(okQ&&okR)?'':'none';
-    });
-  }
-  q.oninput=r.onchange=f; f();
-})();
+  if (typeof lucide !== 'undefined') lucide.createIcons();
+  (()=> {
+    const q=document.getElementById('q'), r=document.getElementById('fRole');
+    const rows=[...document.querySelectorAll('.rowx')];
+    function f(){
+      const qv=(q.value||'').toLowerCase(), rv=r.value;
+      rows.forEach(tr=>{
+        const okQ=tr.dataset.hay.includes(qv);
+        const okR=!rv||tr.dataset.role===rv;
+        tr.style.display=(okQ&&okR)?'':'none';
+      });
+    }
+    q.oninput=r.onchange=f; f();
+  })();
 </script>
 
 <?php require_once __DIR__ . '/../../layout/footer.php'; ?>
