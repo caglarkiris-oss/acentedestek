@@ -244,100 +244,355 @@ $subtitle  = ($role === 'SUPERADMIN')
 $createUrl = base_url('agencies-create.php');
 ?>
 
+<style>
+  .page-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+  
+  .page-title {
+    font-size: 24px;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.5px;
+  }
+  
+  .page-subtitle {
+    font-size: 14px;
+    color: #64748b;
+    margin-top: 6px;
+  }
+  
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(30, 58, 138, 0.3);
+    transition: all 0.2s;
+  }
+  
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(30, 58, 138, 0.4);
+  }
+  
+  .btn-primary svg { width: 18px; height: 18px; }
+  
+  .alert {
+    padding: 14px 18px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .alert svg { width: 20px; height: 20px; flex-shrink: 0; }
+  
+  .alert-success {
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+    border: 1px solid #86efac;
+    color: #166534;
+  }
+  
+  .alert-error {
+    background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+    border: 1px solid #fecaca;
+    color: #991b1b;
+  }
+  
+  .card {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  }
+  
+  .table-container {
+    overflow-x: auto;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  
+  thead {
+    background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+  }
+  
+  th {
+    padding: 14px 20px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  
+  td {
+    padding: 16px 20px;
+    border-bottom: 1px solid #f1f5f9;
+    vertical-align: middle;
+  }
+  
+  tr:hover td {
+    background: #fafbfc;
+  }
+  
+  tr:last-child td {
+    border-bottom: none;
+  }
+  
+  .agency-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .agency-avatar {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  
+  .agency-name {
+    font-weight: 600;
+    color: #0f172a;
+  }
+  
+  .rate-form {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .rate-input {
+    width: 70px;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    background: #f8fafc;
+    transition: all 0.2s;
+  }
+  
+  .rate-input:focus {
+    border-color: #3b82f6;
+    background: white;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  }
+  
+  .rate-suffix {
+    font-size: 14px;
+    font-weight: 600;
+    color: #64748b;
+  }
+  
+  .rate-btn {
+    padding: 8px 14px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #2563eb;
+    background: rgba(37, 99, 235, 0.1);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .rate-btn:hover {
+    background: rgba(37, 99, 235, 0.2);
+  }
+  
+  .badge {
+    display: inline-flex;
+    padding: 5px 12px;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 8px;
+    text-transform: uppercase;
+  }
+  
+  .badge-success {
+    background: rgba(22, 163, 74, 0.1);
+    color: #16a34a;
+  }
+  
+  .badge-danger {
+    background: rgba(220, 38, 38, 0.1);
+    color: #dc2626;
+  }
+  
+  .date-text {
+    font-size: 13px;
+    color: #64748b;
+  }
+  
+  .btn-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .btn-toggle svg { width: 16px; height: 16px; }
+  
+  .btn-toggle.danger {
+    background: rgba(220, 38, 38, 0.1);
+    color: #dc2626;
+  }
+  
+  .btn-toggle.danger:hover {
+    background: rgba(220, 38, 38, 0.2);
+  }
+  
+  .btn-toggle.success {
+    background: rgba(22, 163, 74, 0.1);
+    color: #16a34a;
+  }
+  
+  .btn-toggle.success:hover {
+    background: rgba(22, 163, 74, 0.2);
+  }
+  
+  .empty-state {
+    text-align: center;
+    padding: 60px 24px;
+    color: #94a3b8;
+  }
+  
+  .empty-state svg {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 16px;
+    opacity: 0.4;
+  }
+</style>
+
 <!-- Page Header -->
-<div class="card">
-  <div class="card-header">
-    <div>
-      <h2 class="card-title"><?= e($title) ?></h2>
-      <p class="card-subtitle"><?= e($subtitle) ?></p>
-    </div>
-    <a href="<?= e($createUrl) ?>" class="btn btn-primary" data-testid="create-agency-btn">
-      <i data-lucide="plus"></i>
-      <?= ($role === 'SUPERADMIN') ? 'Yeni Acente' : 'Yeni Tali Acente' ?>
-    </a>
+<div class="page-header">
+  <div>
+    <h1 class="page-title"><?= e($title) ?></h1>
+    <p class="page-subtitle"><?= e($subtitle) ?></p>
   </div>
+  <a href="<?= e($createUrl) ?>" class="btn-primary">
+    <i data-lucide="plus"></i>
+    <?= ($role === 'SUPERADMIN') ? 'Yeni Acente' : 'Yeni Tali Acente' ?>
+  </a>
+</div>
 
-  <?php if ($flash): ?>
-    <div class="alert <?= ($flash['type']==='good' ? 'alert-success' : 'alert-error') ?>" style="margin: var(--sp-4); margin-top: 0;">
-      <i data-lucide="<?= ($flash['type']==='good' ? 'check-circle' : 'alert-circle') ?>"></i>
-      <?= e($flash['msg']) ?>
-    </div>
-  <?php endif; ?>
+<?php if ($flash): ?>
+  <div class="alert <?= ($flash['type']==='good' ? 'alert-success' : 'alert-error') ?>">
+    <i data-lucide="<?= ($flash['type']==='good' ? 'check-circle' : 'alert-circle') ?>"></i>
+    <?= e($flash['msg']) ?>
+  </div>
+<?php endif; ?>
 
-  <div class="table-wrap">
-    <table class="table">
+<div class="card">
+  <div class="table-container">
+    <table>
       <thead>
         <tr>
           <th>ID</th>
-          <th>Acente Adı</th>
-          <th>Komisyon (%)</th>
+          <th>Acente</th>
+          <th>Komisyon</th>
           <th>Durum</th>
           <th>Kayıt Tarihi</th>
           <th style="text-align: right;">İşlem</th>
         </tr>
       </thead>
       <tbody>
-      <?php foreach ($rows as $r): ?>
-        <tr>
-          <td>
-            <span class="u-font-medium">#<?= $r['id'] ?></span>
-          </td>
-          <td>
-            <div class="u-flex u-items-center u-gap-3">
-              <div class="avatar avatar-sm"><?= strtoupper(substr($r['name'], 0, 2)) ?></div>
-              <span class="u-font-semibold"><?= e($r['name']) ?></span>
-            </div>
-          </td>
-
-          <td>
-            <form method="post" class="rateBox">
-              <input type="hidden" name="_csrf" value="<?= e($csrf) ?>">
-              <input type="hidden" name="rate_id" value="<?= (int)$r['id'] ?>">
-              <input class="rateInput" name="commission_rate" inputmode="decimal"
-                     value="<?= e(number_format((float)$r['commission_rate'], 2, ',', '')) ?>"
-                     aria-label="Komisyon oranı">
-              <span class="rateSuffix">%</span>
-              <button class="rateBtn" type="submit">Kaydet</button>
-            </form>
-          </td>
-
-          <td>
-            <?= $r['is_active']
-              ? '<span class="badge badge-success">Aktif</span>'
-              : '<span class="badge badge-danger">Pasif</span>' ?>
-          </td>
-          <td>
-            <span class="u-text-muted u-text-sm">
-              <?= $r['created_at'] ? date('d.m.Y H:i', strtotime($r['created_at'])) : '-' ?>
-            </span>
-          </td>
-          <td style="text-align: right;">
-            <form method="post" style="display: inline;">
-              <input type="hidden" name="_csrf" value="<?= e($csrf) ?>">
-              <input type="hidden" name="toggle_id" value="<?= $r['id'] ?>">
-              <button class="btn btn-sm <?= $r['is_active'] ? 'btn-danger' : 'btn-success' ?>">
-                <i data-lucide="<?= $r['is_active'] ? 'x-circle' : 'check-circle' ?>" class="icon-sm"></i>
-                <?= $r['is_active'] ? 'Devre Dışı' : 'Aktifleştir' ?>
-              </button>
-            </form>
-          </td>
-        </tr>
-      <?php endforeach; ?>
-
-      <?php if (empty($rows)): ?>
-        <tr>
-          <td colspan="6" class="u-text-center u-text-muted" style="padding: var(--sp-8);">
-            <i data-lucide="building-2" style="width: 32px; height: 32px; opacity: 0.4; display: block; margin: 0 auto var(--sp-3);"></i>
-            Henüz kayıtlı acente yok.
-          </td>
-        </tr>
-      <?php endif; ?>
-
+        <?php if (empty($rows)): ?>
+          <tr>
+            <td colspan="6">
+              <div class="empty-state">
+                <i data-lucide="building-2"></i>
+                <p>Henüz kayıtlı acente yok</p>
+              </div>
+            </td>
+          </tr>
+        <?php else: ?>
+          <?php foreach ($rows as $r): ?>
+            <tr>
+              <td><strong>#<?= $r['id'] ?></strong></td>
+              <td>
+                <div class="agency-info">
+                  <div class="agency-avatar"><?= strtoupper(substr($r['name'], 0, 2)) ?></div>
+                  <span class="agency-name"><?= e($r['name']) ?></span>
+                </div>
+              </td>
+              <td>
+                <form method="post" class="rate-form">
+                  <input type="hidden" name="_csrf" value="<?= e($csrf) ?>">
+                  <input type="hidden" name="rate_id" value="<?= (int)$r['id'] ?>">
+                  <input type="text" class="rate-input" name="commission_rate" 
+                         value="<?= e(number_format((float)$r['commission_rate'], 2, ',', '')) ?>">
+                  <span class="rate-suffix">%</span>
+                  <button type="submit" class="rate-btn">Kaydet</button>
+                </form>
+              </td>
+              <td>
+                <span class="badge <?= $r['is_active'] ? 'badge-success' : 'badge-danger' ?>">
+                  <?= $r['is_active'] ? 'Aktif' : 'Pasif' ?>
+                </span>
+              </td>
+              <td>
+                <span class="date-text">
+                  <?= $r['created_at'] ? date('d.m.Y H:i', strtotime($r['created_at'])) : '-' ?>
+                </span>
+              </td>
+              <td style="text-align: right;">
+                <form method="post" style="display: inline;">
+                  <input type="hidden" name="_csrf" value="<?= e($csrf) ?>">
+                  <input type="hidden" name="toggle_id" value="<?= $r['id'] ?>">
+                  <button type="submit" class="btn-toggle <?= $r['is_active'] ? 'danger' : 'success' ?>">
+                    <i data-lucide="<?= $r['is_active'] ? 'x-circle' : 'check-circle' ?>"></i>
+                    <?= $r['is_active'] ? 'Devre Dışı' : 'Aktifleştir' ?>
+                  </button>
+                </form>
+              </td>
+            </tr>
+          <?php endforeach; ?>
+        <?php endif; ?>
       </tbody>
     </table>
   </div>
 </div>
 
-<script>if (typeof lucide !== 'undefined') lucide.createIcons();</script>
+<script>lucide.createIcons();</script>
 
 <?php require_once __DIR__ . '/../../layout/footer.php'; ?>
