@@ -69,7 +69,7 @@ return [
         'host'    => env_str('DB_HOST', 'localhost'),
         'name'    => env_str('DB_NAME', 'acentede_acentedestekdb'),
         'user'    => env_str('DB_USER', 'acentede_acentedestek'),
-        'pass'    => env_str('DB_PASS', '){iw$RGuT4gpL&LN'),
+        'pass'    => env_str('DB_PASS', 'test123'),
         'charset' => 'utf8mb4',
         'port'    => env_int('DB_PORT', 3306),
     ],
