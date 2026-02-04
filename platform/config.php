@@ -30,7 +30,7 @@ return [
 'app' => [
         'name'  => 'Acentedestek',
         'env'   => env_str('APP_ENV', 'prod'),
-        'debug' => env_bool('APP_DEBUG', false),
+        'debug' => env_bool('APP_DEBUG', true),
     ],
 
     /* =========================
