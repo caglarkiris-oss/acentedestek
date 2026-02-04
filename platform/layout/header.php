@@ -349,6 +349,152 @@ $userRole = (string)($_SESSION['role'] ?? '');
     
     .topbar-btn svg { width: 20px; height: 20px; }
 
+    /* Notification System */
+    .notification-wrapper {
+      position: relative;
+    }
+    
+    .notification-badge {
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      min-width: 18px;
+      height: 18px;
+      padding: 0 5px;
+      background: var(--danger);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      border-radius: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .notification-dropdown {
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      width: 340px;
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: 16px;
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+      display: none;
+      z-index: 200;
+      overflow: hidden;
+    }
+    
+    .notification-dropdown.open { display: block; }
+    
+    .notif-header {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--gray-100);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--gray-900);
+    }
+    
+    .notif-header button {
+      background: none;
+      border: none;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--blue-600);
+      cursor: pointer;
+    }
+    
+    .notif-list {
+      max-height: 320px;
+      overflow-y: auto;
+    }
+    
+    .notif-item {
+      display: flex;
+      gap: 14px;
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--gray-50);
+      transition: background 0.15s;
+      cursor: pointer;
+    }
+    
+    .notif-item:hover { background: var(--gray-50); }
+    .notif-item.unread { background: rgba(37, 99, 235, 0.04); }
+    .notif-item.unread:hover { background: rgba(37, 99, 235, 0.08); }
+    
+    .notif-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    
+    .notif-icon svg { width: 20px; height: 20px; }
+    .notif-icon.green { background: rgba(22, 163, 74, 0.1); color: var(--success); }
+    .notif-icon.orange { background: rgba(245, 158, 11, 0.1); color: var(--warning); }
+    .notif-icon.blue { background: rgba(37, 99, 235, 0.1); color: var(--blue-600); }
+    .notif-icon.red { background: rgba(220, 38, 38, 0.1); color: var(--danger); }
+    
+    .notif-content { flex: 1; min-width: 0; }
+    
+    .notif-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--gray-900);
+      margin-bottom: 2px;
+    }
+    
+    .notif-time {
+      font-size: 12px;
+      color: var(--gray-500);
+    }
+    
+    .notif-footer {
+      display: block;
+      padding: 14px 20px;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--blue-600);
+      text-decoration: none;
+      border-top: 1px solid var(--gray-100);
+      transition: background 0.15s;
+    }
+    
+    .notif-footer:hover { background: var(--gray-50); }
+
+    /* Dark Mode */
+    body.dark-mode {
+      --gray-50: #1e293b;
+      --gray-100: #334155;
+      --gray-200: #475569;
+      --gray-300: #64748b;
+      --gray-400: #94a3b8;
+      --gray-500: #cbd5e1;
+      --gray-600: #e2e8f0;
+      --gray-900: #f8fafc;
+    }
+    
+    body.dark-mode .main { background: #0f172a; }
+    body.dark-mode .topbar { background: rgba(30, 41, 59, 0.9); border-color: #334155; }
+    body.dark-mode .topbar-btn { background: #1e293b; border-color: #334155; color: #e2e8f0; }
+    body.dark-mode .user-menu-btn { background: #1e293b; border-color: #334155; color: #e2e8f0; }
+    body.dark-mode .user-dropdown { background: #1e293b; border-color: #334155; }
+    body.dark-mode .dropdown-item { color: #e2e8f0; }
+    body.dark-mode .dropdown-item:hover { background: #334155; }
+    body.dark-mode .notification-dropdown { background: #1e293b; border-color: #334155; }
+    body.dark-mode .notif-header { border-color: #334155; color: #f8fafc; }
+    body.dark-mode .notif-item { border-color: #334155; }
+    body.dark-mode .notif-item:hover { background: #334155; }
+    body.dark-mode .notif-title { color: #f8fafc; }
+    body.dark-mode .notif-footer { border-color: #334155; }
+
     .user-menu {
       position: relative;
     }
