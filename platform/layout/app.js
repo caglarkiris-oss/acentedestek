@@ -174,6 +174,7 @@
 
   // ===== RESPONSIVE HELPERS =====
   function handleResize() {
+    const appShell = document.getElementById('appShell') || document.querySelector('.app-shell');
     const isMobile = window.innerWidth <= 1024;
     
     if (isMobile && appShell) {
@@ -215,6 +216,7 @@
 
   // ===== ESCAPE KEY HANDLER =====
   document.addEventListener('keydown', function(e) {
+    const appShell = document.getElementById('appShell') || document.querySelector('.app-shell');
     if (e.key === 'Escape') {
       // Close dropdowns
       document.querySelectorAll('.dd.is-open').forEach(function(n) {
@@ -252,14 +254,26 @@
 
   // ===== TOOLTIP INITIALIZATION =====
   // Add tooltips to nav items for collapsed sidebar
-  document.querySelectorAll('.nav-item').forEach(function(item) {
-    const text = item.querySelector('span:not(.nav-icon)');
-    if (text) {
-      item.setAttribute('data-tooltip', text.textContent.trim());
-    }
-  });
+  function initTooltips() {
+    document.querySelectorAll('.nav-item').forEach(function(item) {
+      const text = item.querySelector('span:not(.nav-icon)');
+      if (text) {
+        item.setAttribute('data-tooltip', text.textContent.trim());
+      }
+    });
+  }
 
-  // ===== INITIALIZE =====
-  handleResize();
+  // ===== INITIALIZE ON DOM READY =====
+  function init() {
+    initSidebar();
+    initTooltips();
+    handleResize();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 
 })();
