@@ -128,60 +128,106 @@ function tl($n): string {
 }
 ?>
 
-
-<main class="page-wrap">
-  <div class="panel">
-    <h2 class="h">Faturalama Raporu (Ana Acente Bazında)</h2>
-    <div class="muted">
-      <?= $onlyActive ? 'Sadece aktif kullanıcılar baz alınır.' : 'Tüm kullanıcılar baz alınır.' ?>
-      • Kullanıcı başı ücret: <span class="badge"><?= htmlspecialchars(tl($pricePerUser)) ?> TL</span>
-    </div>
-
-    <div class="kpi">
-      <div class="box">
-        <small>Toplam Kullanıcı</small>
-        <b><?= (int)$totalAllUsers ?></b>
-      </div>
-      <div class="box">
-        <small>Toplam Tutar</small>
-        <b><?= htmlspecialchars(tl($totalAllAmount)) ?> TL</b>
-      </div>
+<!-- Billing Page -->
+<div class="card">
+  <div class="card-header">
+    <div>
+      <h2 class="card-title">
+        <i data-lucide="wallet" style="display: inline; width: 24px; height: 24px; vertical-align: middle; margin-right: 8px;"></i>
+        Faturalama Raporu
+      </h2>
+      <p class="card-subtitle">
+        <?= $onlyActive ? 'Sadece aktif kullanıcılar baz alınır.' : 'Tüm kullanıcılar baz alınır.' ?>
+        • Kullanıcı başı ücret: <span class="badge badge-info"><?= htmlspecialchars(tl($pricePerUser)) ?> ₺</span>
+      </p>
     </div>
   </div>
+</div>
 
-  <div class="panel">
+<!-- KPI Cards -->
+<div class="kpi-row u-mt-4">
+  <div class="stat-card" data-testid="kpi-total-users">
+    <div class="stat-card-icon">
+      <i data-lucide="users"></i>
+    </div>
+    <div class="stat-card-label">Toplam Kullanıcı</div>
+    <div class="stat-card-value"><?= number_format((int)$totalAllUsers) ?></div>
+  </div>
+  
+  <div class="stat-card" data-testid="kpi-total-amount">
+    <div class="stat-card-icon success">
+      <i data-lucide="banknote"></i>
+    </div>
+    <div class="stat-card-label">Toplam Tutar</div>
+    <div class="stat-card-value"><?= htmlspecialchars(tl($totalAllAmount)) ?> ₺</div>
+  </div>
+</div>
+
+<!-- Data Table -->
+<div class="card u-mt-4">
+  <div class="card-header">
+    <div>
+      <h3 class="card-title">Ana Acente Bazında Detay</h3>
+      <p class="card-subtitle"><?= count($rows) ?> ana acente listeleniyor</p>
+    </div>
+  </div>
+  
+  <div class="table-wrap" style="border: none; border-radius: 0;">
     <table class="table">
       <thead>
         <tr>
           <th>Ana Acente</th>
-          <th>Tali Sayısı</th>
-          <th>Ana User</th>
-          <th>Tali User</th>
-          <th>Toplam User</th>
-          <th>Kullanıcı Ücreti</th>
-          <th>Tutar</th>
+          <th style="text-align: center;">Tali Sayısı</th>
+          <th style="text-align: center;">Ana User</th>
+          <th style="text-align: center;">Tali User</th>
+          <th style="text-align: center;">Toplam User</th>
+          <th style="text-align: right;">Kullanıcı Ücreti</th>
+          <th style="text-align: right;">Tutar</th>
         </tr>
       </thead>
       <tbody>
         <?php if (empty($rows)): ?>
-          <tr><td colspan="7">Kayıt yok.</td></tr>
+          <tr>
+            <td colspan="7" class="u-text-center u-text-muted" style="padding: var(--sp-8);">
+              <i data-lucide="inbox" style="width: 32px; height: 32px; opacity: 0.4; display: block; margin: 0 auto var(--sp-3);"></i>
+              Henüz kayıt yok.
+            </td>
+          </tr>
         <?php else: ?>
           <?php foreach ($rows as $r): ?>
             <tr>
-              <td><?= htmlspecialchars($r['invoice_agency_name']) ?></td>
-              <td><?= (int)$r['tali_acente_sayisi'] ?></td>
-              <td><?= (int)$r['ana_user_sayisi'] ?></td>
-              <td><?= (int)$r['tali_user_sayisi'] ?></td>
-              <td><span class="badge"><?= (int)$r['toplam_user'] ?></span></td>
-              <td><?= htmlspecialchars(tl($r['price_per_user'])) ?> TL</td>
-              <td><b><?= htmlspecialchars(tl($r['amount'])) ?> TL</b></td>
+              <td>
+                <div class="u-flex u-items-center u-gap-3">
+                  <div class="avatar avatar-sm"><?= strtoupper(substr($r['invoice_agency_name'], 0, 2)) ?></div>
+                  <span class="u-font-semibold"><?= htmlspecialchars($r['invoice_agency_name']) ?></span>
+                </div>
+              </td>
+              <td style="text-align: center;"><?= (int)$r['tali_acente_sayisi'] ?></td>
+              <td style="text-align: center;"><?= (int)$r['ana_user_sayisi'] ?></td>
+              <td style="text-align: center;"><?= (int)$r['tali_user_sayisi'] ?></td>
+              <td style="text-align: center;"><span class="badge badge-info"><?= (int)$r['toplam_user'] ?></span></td>
+              <td style="text-align: right;" class="u-text-muted"><?= htmlspecialchars(tl($r['price_per_user'])) ?> ₺</td>
+              <td style="text-align: right;"><span class="u-font-bold"><?= htmlspecialchars(tl($r['amount'])) ?> ₺</span></td>
             </tr>
           <?php endforeach; ?>
         <?php endif; ?>
       </tbody>
+      <?php if (!empty($rows)): ?>
+        <tfoot>
+          <tr style="background: var(--bg-hover); font-weight: var(--fw-bold);">
+            <td colspan="4">Toplam</td>
+            <td style="text-align: center;"><?= number_format((int)$totalAllUsers) ?></td>
+            <td></td>
+            <td style="text-align: right;"><?= htmlspecialchars(tl($totalAllAmount)) ?> ₺</td>
+          </tr>
+        </tfoot>
+      <?php endif; ?>
     </table>
   </div>
-</main>
+</div>
 
-</body>
-</html>
+<script>
+  if (typeof lucide !== 'undefined') lucide.createIcons();
+</script>
+
+<?php require_once __DIR__ . '/../../layout/footer.php'; ?>
