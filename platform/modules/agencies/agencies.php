@@ -244,89 +244,100 @@ $subtitle  = ($role === 'SUPERADMIN')
 $createUrl = base_url('agencies-create.php');
 ?>
 
-<section class="page">
-  <section class="card">
-
-
-
-<div class="u-flex u-between u-center u-gap-3">
-  <div>
-    <h2><?= e($title) ?></h2>
-    <div class="small"><?= e($subtitle) ?></div>
+<!-- Page Header -->
+<div class="card">
+  <div class="card-header">
+    <div>
+      <h2 class="card-title"><?= e($title) ?></h2>
+      <p class="card-subtitle"><?= e($subtitle) ?></p>
+    </div>
+    <a href="<?= e($createUrl) ?>" class="btn btn-primary" data-testid="create-agency-btn">
+      <i data-lucide="plus"></i>
+      <?= ($role === 'SUPERADMIN') ? 'Yeni Acente' : 'Yeni Tali Acente' ?>
+    </a>
   </div>
 
-  <a href="<?= e($createUrl) ?>" class="btn primary">
-    + <?= ($role === 'SUPERADMIN') ? 'Yeni Acente' : 'Yeni Tali Acente' ?>
-  </a>
+  <?php if ($flash): ?>
+    <div class="alert <?= ($flash['type']==='good' ? 'alert-success' : 'alert-error') ?>" style="margin: var(--sp-4); margin-top: 0;">
+      <i data-lucide="<?= ($flash['type']==='good' ? 'check-circle' : 'alert-circle') ?>"></i>
+      <?= e($flash['msg']) ?>
+    </div>
+  <?php endif; ?>
+
+  <div class="table-wrap">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Acente Adı</th>
+          <th>Komisyon (%)</th>
+          <th>Durum</th>
+          <th>Kayıt Tarihi</th>
+          <th style="text-align: right;">İşlem</th>
+        </tr>
+      </thead>
+      <tbody>
+      <?php foreach ($rows as $r): ?>
+        <tr>
+          <td>
+            <span class="u-font-medium">#<?= $r['id'] ?></span>
+          </td>
+          <td>
+            <div class="u-flex u-items-center u-gap-3">
+              <div class="avatar avatar-sm"><?= strtoupper(substr($r['name'], 0, 2)) ?></div>
+              <span class="u-font-semibold"><?= e($r['name']) ?></span>
+            </div>
+          </td>
+
+          <td>
+            <form method="post" class="rateBox">
+              <input type="hidden" name="_csrf" value="<?= e($csrf) ?>">
+              <input type="hidden" name="rate_id" value="<?= (int)$r['id'] ?>">
+              <input class="rateInput" name="commission_rate" inputmode="decimal"
+                     value="<?= e(number_format((float)$r['commission_rate'], 2, ',', '')) ?>"
+                     aria-label="Komisyon oranı">
+              <span class="rateSuffix">%</span>
+              <button class="rateBtn" type="submit">Kaydet</button>
+            </form>
+          </td>
+
+          <td>
+            <?= $r['is_active']
+              ? '<span class="badge badge-success">Aktif</span>'
+              : '<span class="badge badge-danger">Pasif</span>' ?>
+          </td>
+          <td>
+            <span class="u-text-muted u-text-sm">
+              <?= $r['created_at'] ? date('d.m.Y H:i', strtotime($r['created_at'])) : '-' ?>
+            </span>
+          </td>
+          <td style="text-align: right;">
+            <form method="post" style="display: inline;">
+              <input type="hidden" name="_csrf" value="<?= e($csrf) ?>">
+              <input type="hidden" name="toggle_id" value="<?= $r['id'] ?>">
+              <button class="btn btn-sm <?= $r['is_active'] ? 'btn-danger' : 'btn-success' ?>">
+                <i data-lucide="<?= $r['is_active'] ? 'x-circle' : 'check-circle' ?>" class="icon-sm"></i>
+                <?= $r['is_active'] ? 'Devre Dışı' : 'Aktifleştir' ?>
+              </button>
+            </form>
+          </td>
+        </tr>
+      <?php endforeach; ?>
+
+      <?php if (empty($rows)): ?>
+        <tr>
+          <td colspan="6" class="u-text-center u-text-muted" style="padding: var(--sp-8);">
+            <i data-lucide="building-2" style="width: 32px; height: 32px; opacity: 0.4; display: block; margin: 0 auto var(--sp-3);"></i>
+            Henüz kayıtlı acente yok.
+          </td>
+        </tr>
+      <?php endif; ?>
+
+      </tbody>
+    </table>
+  </div>
 </div>
 
-<?php if ($flash): ?>
-  <div class="alert <?= ($flash['type']==='good' ? 'ok' : 'err') ?>">
-    <?= e($flash['msg']) ?>
-  </div>
-<?php endif; ?>
-
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Ad</th>
-            <th>Komisyon (%)</th>
-            <th>Durum</th>
-            <th>Oluşturma</th>
-            <th>İşlem</th>
-          </tr>
-        </thead>
-        <tbody>
-        <?php foreach ($rows as $r): ?>
-          <tr>
-            <td><?= $r['id'] ?></td>
-            <td><?= e($r['name']) ?></td>
-
-            <td>
-              <form method="post" class="rateBox">
-                <input type="hidden" name="_csrf" value="<?= e($csrf) ?>">
-                <input type="hidden" name="rate_id" value="<?= (int)$r['id'] ?>">
-                <input class="rateInput" name="commission_rate" inputmode="decimal"
-                       value="<?= e(number_format((float)$r['commission_rate'], 2, ',', '')) ?>"
-                       aria-label="Komisyon oranı">
-                <span class="rateSuffix">%</span>
-                <button class="rateBtn" type="submit">Kaydet</button>
-              </form>
-            </td>
-
-            <td>
-              <?= $r['is_active']
-                ? '<span class="badge good">Aktif</span>'
-                : '<span class="badge bad">Pasif</span>' ?>
-            </td>
-            <td class="small">
-              <?= $r['created_at']
-                ? date('d.m.Y H:i', strtotime($r['created_at']))
-                : '-' ?>
-            </td>
-            <td>
-              <form method="post">
-                <input type="hidden" name="_csrf" value="<?= e($csrf) ?>">
-                <input type="hidden" name="toggle_id" value="<?= $r['id'] ?>">
-                <button class="btn sm <?= $r['is_active'] ? 'danger' : 'success' ?>">
-                  <?= $r['is_active'] ? 'Devre Dışı Bırak' : 'Aktifleştir' ?>
-                </button>
-              </form>
-            </td>
-          </tr>
-        <?php endforeach; ?>
-
-        <?php if (empty($rows)): ?>
-          <tr><td colspan="6" class="small">Kayıt yok.</td></tr>
-        <?php endif; ?>
-
-        </tbody>
-      </table>
-    </div>
-
-  </section>
-</section>
+<script>if (typeof lucide !== 'undefined') lucide.createIcons();</script>
 
 <?php require_once __DIR__ . '/../../layout/footer.php'; ?>
