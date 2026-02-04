@@ -2,46 +2,53 @@
   'use strict';
 
   // ===== SIDEBAR COLLAPSE TOGGLE =====
-  const appShell = document.getElementById('appShell') || document.querySelector('.app-shell');
-  const sidebarToggle = document.querySelector('[data-sidebar-toggle]');
-  
-  // Check for saved preference
-  const savedState = localStorage.getItem('sidebar-collapsed');
-  if (savedState === 'true' && appShell) {
-    appShell.classList.add('sidebar-collapsed');
-  }
-
-  // Sidebar toggle handler
-  document.addEventListener('click', function(e) {
-    const toggle = e.target.closest('[data-sidebar-toggle]');
-    if (!toggle || !appShell) return;
+  function initSidebar() {
+    const appShell = document.getElementById('appShell') || document.querySelector('.app-shell');
     
-    // Check if mobile (sidebar slides in/out) or desktop (collapse/expand)
-    const isMobile = window.innerWidth <= 1024;
-    
-    if (isMobile) {
-      appShell.classList.toggle('sidebar-open');
-    } else {
-      appShell.classList.toggle('sidebar-collapsed');
-      // Save preference
-      localStorage.setItem('sidebar-collapsed', appShell.classList.contains('sidebar-collapsed'));
+    if (!appShell) {
+      console.warn('App shell not found');
+      return;
     }
     
-    e.preventDefault();
-  });
-
-  // Close sidebar on mobile when clicking overlay
-  document.addEventListener('click', function(e) {
-    if (e.target.classList && e.target.classList.contains('sidebar-overlay')) {
-      appShell && appShell.classList.remove('sidebar-open');
+    // Check for saved preference
+    const savedState = localStorage.getItem('sidebar-collapsed');
+    if (savedState === 'true') {
+      appShell.classList.add('sidebar-collapsed');
     }
-  });
 
-  // Add overlay element if not exists
-  if (!document.querySelector('.sidebar-overlay')) {
-    const overlay = document.createElement('div');
-    overlay.className = 'sidebar-overlay';
-    document.body.appendChild(overlay);
+    // Sidebar toggle handler - use event delegation
+    document.body.addEventListener('click', function(e) {
+      const toggle = e.target.closest('[data-sidebar-toggle]');
+      if (!toggle) return;
+      
+      // Check if mobile (sidebar slides in/out) or desktop (collapse/expand)
+      const isMobile = window.innerWidth <= 1024;
+      
+      if (isMobile) {
+        appShell.classList.toggle('sidebar-open');
+      } else {
+        appShell.classList.toggle('sidebar-collapsed');
+        // Save preference
+        localStorage.setItem('sidebar-collapsed', appShell.classList.contains('sidebar-collapsed'));
+      }
+      
+      e.preventDefault();
+      e.stopPropagation();
+    });
+
+    // Close sidebar on mobile when clicking overlay
+    document.body.addEventListener('click', function(e) {
+      if (e.target.classList && e.target.classList.contains('sidebar-overlay')) {
+        appShell.classList.remove('sidebar-open');
+      }
+    });
+
+    // Add overlay element if not exists
+    if (!document.querySelector('.sidebar-overlay')) {
+      const overlay = document.createElement('div');
+      overlay.className = 'sidebar-overlay';
+      document.body.appendChild(overlay);
+    }
   }
 
   // ===== TOAST NOTIFICATIONS =====
