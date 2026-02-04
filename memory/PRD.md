@@ -24,12 +24,21 @@ PHP tabanlı sigorta/bankacılık SaaS platformu için enterprise seviye UI refa
 ## Tamamlanan İşler (Ocak 2026)
 
 ### Design System Oluşturuldu
-- `/platform/layout/tokens.css` - CSS değişkenleri, renk paleti, tipografi
-- `/platform/layout/components.css` - Butonlar, kartlar, tablolar, formlar, badgeler
-- `/platform/layout/layout.css` - App shell, collapsible sidebar, topbar, grid sistem
-- `/platform/layout/pages.css` - Sayfa-bazlı stiller (login, dashboard, tickets, mutabakat)
-- `/platform/layout/combined.css` - Performans için birleştirilmiş CSS
+Tek dosyada birleştirilmiş modern CSS design system:
+- `/platform/layout/app.css` - Tüm stiller (tokens, components, layout, pages) - 1670 satır
 - `/platform/layout/app.js` - Sidebar toggle, dropdown, toast, tooltips
+- `/platform/layout/header.php` - Collapsible sidebar, Lucide ikonları, modern topbar
+- `/platform/layout/footer.php` - Footer ve script initialization
+
+### Silinen Eski Dosyalar
+- ~~theme.css~~ (silindi)
+- ~~ui.css~~ (silindi)
+- ~~tokens.css~~ (app.css'e birleştirildi)
+- ~~components.css~~ (app.css'e birleştirildi)
+- ~~layout.css~~ (app.css'e birleştirildi)
+- ~~pages.css~~ (app.css'e birleştirildi)
+- ~~combined.css~~ (silindi)
+- ~~assets/icons/sprite.svg~~ (silindi - Lucide CDN kullanılıyor)
 
 ### Güncellenen Sayfalar
 1. **Login** - Premium kart tasarımı, gradient arka plan, kurumsal görünüm
