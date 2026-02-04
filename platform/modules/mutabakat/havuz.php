@@ -860,12 +860,18 @@ require_once __DIR__ . '/../../layout/header.php';
     </form>
   </div>
 
-    <?php if ($flashErr): ?>
-      <div class="alert alert-error"><?= h($flashErr) ?></div>
-    <?php endif; ?>
-    <?php if ($flashOk): ?>
-      <div class="alert alert-success"><?= h($flashOk) ?></div>
-    <?php endif; ?>
+  <?php if ($flashErr): ?>
+    <div class="alert alert-error" style="margin: var(--sp-4); margin-top: 0;">
+      <i data-lucide="alert-circle"></i>
+      <?= h($flashErr) ?>
+    </div>
+  <?php endif; ?>
+  <?php if ($flashOk): ?>
+    <div class="alert alert-success" style="margin: var(--sp-4); margin-top: 0;">
+      <i data-lucide="check-circle"></i>
+      <?= h($flashOk) ?>
+    </div>
+  <?php endif; ?>
 
     <!-- Tabs -->
     <div class="tabs">
