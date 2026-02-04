@@ -1,0 +1,15 @@
+[27-Dec-2025 18:18:44 Europe/Istanbul] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /home/acentede/public_html/platform/mutabakat/detay.php:116
+Stack trace:
+#0 /home/acentede/public_html/platform/mutabakat/detay.php(116): mysqli_stmt->bind_param()
+#1 {main}
+  thrown in /home/acentede/public_html/platform/mutabakat/detay.php on line 116
+[27-Dec-2025 18:22:34 Europe/Istanbul] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /home/acentede/public_html/platform/mutabakat/detay.php:116
+Stack trace:
+#0 /home/acentede/public_html/platform/mutabakat/detay.php(116): mysqli_stmt->bind_param()
+#1 {main}
+  thrown in /home/acentede/public_html/platform/mutabakat/detay.php on line 116
+[27-Dec-2025 18:22:38 Europe/Istanbul] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /home/acentede/public_html/platform/mutabakat/detay.php:116
+Stack trace:
+#0 /home/acentede/public_html/platform/mutabakat/detay.php(116): mysqli_stmt->bind_param()
+#1 {main}
+  thrown in /home/acentede/public_html/platform/mutabakat/detay.php on line 116

@@ -1,0 +1,142 @@
+# ===============================
+# Platform Security + Pretty URLs (STABLE)
+# ===============================
+
+Options -Indexes
+RewriteEngine On
+RewriteBase /platform/
+
+# -------------------------------
+# Hassas dosya koruması
+# -------------------------------
+<FilesMatch "\.(log|sql|env|ini|bak|old|sh)$">
+  Require all denied
+</FilesMatch>
+
+# Uzantısız / özel log dosyalarını da engelle
+<FilesMatch "^(error_log|.*_error\.log|.*_api_error\.log)$">
+  Require all denied
+</FilesMatch>
+
+
+# .git (varsa) engelle
+RewriteRule (^|/)\.git - [F,L]
+
+# -------------------------------
+# PHP bilgi sızdırmayı azaltma
+# -------------------------------
+<IfModule mod_php.c>
+  php_flag expose_php Off
+</IfModule>
+
+# -------------------------------
+# Güvenlik header'ları
+# -------------------------------
+<IfModule mod_headers.c>
+  Header always unset X-Powered-By
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set X-XSS-Protection "1; mode=block"
+</IfModule>
+
+# --------------------------------------------------
+# 0) ticket?id=23 -> ticket/23 (SADECE GET 301)
+# --------------------------------------------------
+RewriteCond %{REQUEST_METHOD} =GET
+RewriteCond %{THE_REQUEST} \sGET\s.+/platform/ticket\?id=([0-9]+) [NC]
+RewriteRule ^ticket$ ticket/%1 [R=301,L]
+
+# --------------------------------------------------
+# 1) .php ile gelirse -> temiz URL'ye 301 (SADECE GET)
+# --------------------------------------------------
+RewriteCond %{REQUEST_METHOD} =GET
+RewriteCond %{THE_REQUEST} \s/+platform/([^\s?]+)\.php[\s?] [NC]
+RewriteRule ^ %1 [R=301,L]
+
+# --------------------------------------------------
+# 2) /platform/ -> dashboard.php
+# --------------------------------------------------
+RewriteRule ^$ dashboard.php [L,QSA]
+
+# --------------------------------------------------
+# 3) Gerçek dosya/klasör varsa rewrite yapma
+# --------------------------------------------------
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# --------------------------------------------------
+# 4) Pretty URL -> ilgili php dosyası (SENİN ROUTE'LAR)
+# --------------------------------------------------
+
+# Auth
+RewriteRule ^login/?$ login.php [L,QSA]
+RewriteRule ^logout/?$ logout.php [L,QSA]
+RewriteRule ^forgot-password/?$ forgot-password.php [L,QSA]
+RewriteRule ^reset-password/?$ reset-password.php [L,QSA]
+RewriteRule ^force-password-change/?$ force-password-change.php [L,QSA]
+
+# Core pages
+RewriteRule ^dashboard/?$ dashboard.php [L,QSA]
+RewriteRule ^reports/?$ reports.php [L,QSA]
+RewriteRule ^mutabakat/?$ mutabakat.php [L,QSA]
+
+# Mutabakat alt sayfaları (fallback çalışsa da explicit route daha stabil)
+RewriteRule ^mutabakat/havuz/?$ mutabakat/havuz.php [L,QSA]
+RewriteRule ^mutabakat/atama/?$ mutabakat/atama.php [L,QSA]
+RewriteRule ^mutabakat/dogrulama/?$ mutabakat/dogrulama.php [L,QSA]
+RewriteRule ^mutabakat/dogrulama-detay/?$ mutabakat/dogrulama-detay.php [L,QSA]
+RewriteRule ^mutabakat/odemeler/?$ mutabakat/odemeler.php [L,QSA]
+
+# ✅ Ödemeler route (dosya /platform/mutabakat/odemeler.php)
+RewriteRule ^odemeler/?$ mutabakat/odemeler.php [L,QSA]
+
+# Tickets
+RewriteRule ^tickets/?$ tickets.php [L,QSA]
+RewriteRule ^ticket/([0-9]+)/?$ ticket.php?id=$1 [L,QSA]
+RewriteRule ^ticket/?$ ticket.php [L,QSA]
+RewriteRule ^ticket-create/?$ ticket-create.php [L,QSA]
+
+# Users
+RewriteRule ^users/?$ users.php [L,QSA]
+RewriteRule ^users-create/?$ users-create.php [L,QSA]
+
+# Agencies
+RewriteRule ^agencies/?$ agencies.php [L,QSA]
+RewriteRule ^agencies-create/?$ agencies-create.php [L,QSA]
+RewriteRule ^agencies-profile/?$ agencies-profile.php [L,QSA]
+RewriteRule ^agency-directory/?$ agency-directory.php [L,QSA]
+
+# AJAX endpoints
+RewriteRule ^api/ticket/?$ api/ticket.php [L,QSA]
+RewriteRule ^ajax-ticket-counters/?$ ajax-ticket-counters.php [L,QSA]
+RewriteRule ^ajax-ticket-reply/?$ ajax-ticket-reply.php [L,QSA]
+RewriteRule ^ajax-ticket-close/?$ ajax-ticket-close.php [L,QSA]
+RewriteRule ^ajax-ticket-workflow-update/?$ ajax-ticket-workflow-update.php [L,QSA]
+RewriteRule ^ajax-ticket-mutabakat-save/?$ ajax-ticket-mutabakat-save.php [L,QSA]
+RewriteRule ^ajax-ticket-upload/?$ ajax-ticket-upload.php [L,QSA]
+RewriteRule ^ajax-ticket-cardinfo-save/?$ ajax-ticket-cardinfo-save.php [L,QSA]
+RewriteRule ^ajax-ticket-unread/?$ ajax-ticket-unread.php [L,QSA]
+RewriteRule ^ajax-ticket-read/?$ ajax-ticket-read.php [L,QSA]
+RewriteRule ^ajax-ticket-card-save/?$ ajax-ticket-card-save.php [L,QSA]
+RewriteRule ^ajax-tickets-list/?$ ajax-tickets-list.php [L,QSA]
+
+# downloads
+RewriteRule ^download-attachment/?$ download-attachment.php [L,QSA]
+
+# --------------------------------------------------
+# 5) FALLBACK (ÇOK ÖNEMLİ)
+# Yeni sayfa ekleyince route yazmasan da çalıştırır:
+# /platform/mutabakat/odemeler -> /platform/mutabakat/odemeler.php
+# --------------------------------------------------
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.+?)/?$ $1.php [L,QSA]
+
+# -------------------------------
+# NOT: /modules/* rewrite blokları kaldırıldı.
+# Neden?
+# - RewriteBase zaten /platform/ olduğu için hedefe "platform/..." yazmak /platform/platform/... üretip 404 riski doğuruyordu.
+# - Bu build'de canonical giriş noktaları root wrapper dosyalar (dashboard.php, tickets.php, mutabakat/*.php, vb.).
+# - Eğer gelecekte /platform/modules/* ile direkt erişim istenirse, bu bloklar doğru path ile geri eklenebilir.
+# -------------------------------
+

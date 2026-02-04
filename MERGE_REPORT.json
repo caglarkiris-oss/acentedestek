@@ -1,0 +1,40 @@
+{
+  "timestamp": "2026-02-04T05:42:06",
+  "base_zip": "platform_stage_bank_saas_and_tanzim.zip",
+  "emergent_zip": "acentedestek-main 2.zip",
+  "preserved": [
+    "config.php",
+    "db.php",
+    ".htaccess"
+  ],
+  "added_count": 1,
+  "replaced_count": 12,
+  "skipped_count": 2,
+  "added_sample": [
+    "sql/001_mutabakat_v2.sql"
+  ],
+  "replaced_sample": [
+    "ajax-mutabakat-export.php",
+    "ajax-ticket-close.php",
+    "ajax-ticket-mutabakat-save.php",
+    "auth.php",
+    "helpers.php",
+    "login.php",
+    "layout/footer.php",
+    "layout/header.php",
+    "mutabakat/ajax-edit-cell.php",
+    "mutabakat/atama.php",
+    "mutabakat/havuz.php",
+    "mutabakat/index.php"
+  ],
+  "skipped_sample": [
+    [
+      "config.php",
+      "preserve_core"
+    ],
+    [
+      "db.php",
+      "preserve_core"
+    ]
+  ]
+}
