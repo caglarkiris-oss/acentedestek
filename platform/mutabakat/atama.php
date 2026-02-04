@@ -136,7 +136,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $stA = $conn->prepare("INSERT INTO mutabakat_v2_assignments 
                     (period_id, tali_acente_id, assigned_by, assigned_at, status, summary_satis, summary_iptal, summary_zeyil, summary_hakedis, notes, created_at)
                     VALUES (?, ?, ?, NOW(), ?, ?, ?, ?, ?, ?, NOW())");
-                $stA->bind_param('iiisddds', $periodId, $taliId, $userId, $status, $summarySatis, $summaryIptal, $summaryZeyil, $summaryHakedis, $notesDb);
+                $stA->bind_param('iiisdddds', $periodId, $taliId, $userId, $status, $summarySatis, $summaryIptal, $summaryZeyil, $summaryHakedis, $notesDb);
                 $stA->execute();
                 $assignmentId = (int)$stA->insert_id;
                 $stA->close();
