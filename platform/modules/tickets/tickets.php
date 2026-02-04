@@ -787,4 +787,8 @@ require_once __DIR__ . "/../../layout/header.php";
 })();
 </script>
 
+<script>
+  if (typeof lucide !== 'undefined') lucide.createIcons();
+</script>
+
 <?php require_once __DIR__ . "/../../layout/footer.php"; ?>
