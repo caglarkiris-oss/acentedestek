@@ -121,11 +121,12 @@ PHP + MySQL tabanlı, multi-tenant sigorta mutabakat sistemi. Sigorta acenteleri
 
 ## Backlog / P1 Features
 
-- [ ] İtiraz (dispute) workflow
+- [ ] İtiraz çözümleme (Ana acente tarafı)
+- [ ] Toplu onay/red işlemi
 - [ ] Ödeme modülü entegrasyonu
 - [ ] PDF rapor çıktısı
 - [ ] Dashboard özet istatistikler
-- [ ] Email bildirimleri
+- [ ] Email bildirimleri (atama geldi, onaylandı vb.)
 
 ---
 
