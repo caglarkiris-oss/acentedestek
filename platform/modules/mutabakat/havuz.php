@@ -830,33 +830,35 @@ $currentPage = 'havuz';
 require_once __DIR__ . '/../../layout/header.php';
 ?>
 
-<div class="container">
-  <!-- Baslik ve Donem Secimi -->
-  <div class="card">
-    <div class="card-header">
-      <div>
-        <h1 class="card-title">Mutabakat - Havuz</h1>
-        <div class="card-subtitle"><?= $isMain ? 'Ana acente gorunumu' : 'Tali acente gorunumu' ?></div>
-      </div>
-
-      <form method="get" class="form-inline">
-        <input type="hidden" name="tab" value="<?= h($allowedTab) ?>">
-        <label class="u-text-sm u-text-muted">Donem</label>
-        <select name="period_id" onchange="this.form.submit()" class="form-control">
-          <?php if (empty($periods)): ?>
-            <option value="0">Donem yok</option>
-          <?php else: ?>
-            <?php foreach ($periods as $p):
-              $pid = (int)$p['id'];
-              $ym  = sprintf('%04d-%02d', (int)$p['year'], (int)$p['month']);
-              $stt = (string)($p['status'] ?? '');
-            ?>
-              <option value="<?= $pid ?>" <?= $pid === $periodId ? 'selected' : '' ?>><?= h($ym) ?><?= $stt ? ' - ' . h($stt) : '' ?></option>
-            <?php endforeach; ?>
-          <?php endif; ?>
-        </select>
-      </form>
+<!-- Baslik ve Donem Secimi -->
+<div class="card">
+  <div class="card-header">
+    <div>
+      <h1 class="card-title">
+        <i data-lucide="git-compare" style="display: inline; width: 24px; height: 24px; vertical-align: middle; margin-right: 8px;"></i>
+        Mutabakat - Havuz
+      </h1>
+      <div class="card-subtitle"><?= $isMain ? 'Ana acente görünümü' : 'Tali acente görünümü' ?></div>
     </div>
+
+    <form method="get" class="u-flex u-items-center u-gap-3">
+      <input type="hidden" name="tab" value="<?= h($allowedTab) ?>">
+      <label class="u-text-sm u-text-muted u-font-semibold">Dönem:</label>
+      <select name="period_id" onchange="this.form.submit()" class="form-control" style="min-width: 180px;">
+        <?php if (empty($periods)): ?>
+          <option value="0">Dönem yok</option>
+        <?php else: ?>
+          <?php foreach ($periods as $p):
+            $pid = (int)$p['id'];
+            $ym  = sprintf('%04d-%02d', (int)$p['year'], (int)$p['month']);
+            $stt = (string)($p['status'] ?? '');
+          ?>
+            <option value="<?= $pid ?>" <?= $pid === $periodId ? 'selected' : '' ?>><?= h($ym) ?><?= $stt ? ' - ' . h($stt) : '' ?></option>
+          <?php endforeach; ?>
+        <?php endif; ?>
+      </select>
+    </form>
+  </div>
 
     <?php if ($flashErr): ?>
       <div class="alert alert-error"><?= h($flashErr) ?></div>
