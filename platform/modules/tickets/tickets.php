@@ -483,32 +483,43 @@ require_once __DIR__ . "/../../layout/header.php";
     <!-- ===== SIDEBAR ===== -->
     <aside class="tk-panel">
       <div class="tk-panel-h">
-        <h2 class="tk-title">Ticket Kutusu</h2>
+        <h2 class="tk-title">
+          <i data-lucide="inbox" style="display: inline; width: 20px; height: 20px; vertical-align: middle; margin-right: 8px;"></i>
+          Ticket Kutusu
+        </h2>
         <div class="tk-sub">Gelen / Giden talepler, canlı arama ve branş chipleri</div>
       </div>
 
       <div class="tk-body">
         <div class="tabbar">
           <a class="tabbtn <?= $box==='in'?'is-active':'' ?>" href="<?= h(build_url(['box'=>'in'])) ?>">
+            <i data-lucide="inbox" class="icon-sm"></i>
             Gelen
             <span id="jsInCount" class="tabcount"><?= (int)$unreadIn ?></span>
           </a>
 
           <a class="tabbtn <?= $box==='out'?'is-active':'' ?>" href="<?= h(build_url(['box'=>'out'])) ?>">
+            <i data-lucide="send" class="icon-sm"></i>
             Giden
             <span id="jsOutCount" class="tabcount"><?= (int)$unreadOut ?></span>
           </a>
         </div>
 
         <div class="fgrp">
-          <label class="flabel" for="jsLiveSearch">Ara (canlı)</label>
+          <label class="flabel" for="jsLiveSearch">
+            <i data-lucide="search" style="display: inline; width: 14px; height: 14px; vertical-align: middle; margin-right: 4px;"></i>
+            Ara (canlı)
+          </label>
           <input id="jsLiveSearch" class="finput" type="text"
                  placeholder="Konu / açıklama / gönderen / hedef"
                  value="<?= h($q) ?>">
         </div>
 
         <div class="fgrp">
-          <label class="flabel" for="jsStatusSelect">Durum</label>
+          <label class="flabel" for="jsStatusSelect">
+            <i data-lucide="filter" style="display: inline; width: 14px; height: 14px; vertical-align: middle; margin-right: 4px;"></i>
+            Durum
+          </label>
           <select id="jsStatusSelect" class="fselect">
             <option value="hepsi" <?= ($statusFilter===''||$statusFilter==='hepsi')?'selected':'' ?>>Tüm Durumlar</option>
             <option value="OPEN" <?= ($statusFilter==='OPEN')?'selected':'' ?>>Açık</option>
@@ -521,8 +532,14 @@ require_once __DIR__ . "/../../layout/header.php";
         </div>
 
         <div class="btnrow">
-          <a class="btnx primary" href="<?= h(build_url(['q'=>null,'status'=>$statusFilter?:null])) ?>" id="jsApplyLink">Uygula</a>
-          <a class="btnx" href="<?= h(build_url(['q'=>null,'status'=>null,'branch'=>null])) ?>" id="jsClearAll">Temizle</a>
+          <a class="btnx primary" href="<?= h(build_url(['q'=>null,'status'=>$statusFilter?:null])) ?>" id="jsApplyLink">
+            <i data-lucide="check" class="icon-sm"></i>
+            Uygula
+          </a>
+          <a class="btnx" href="<?= h(build_url(['q'=>null,'status'=>null,'branch'=>null])) ?>" id="jsClearAll">
+            <i data-lucide="x" class="icon-sm"></i>
+            Temizle
+          </a>
         </div>
 
         <div class="br-title">Branşlar</div>
